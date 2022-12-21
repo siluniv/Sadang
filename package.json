@@ -1,7 +1,7 @@
 {
   "name": "sadang",
   "description": "블루닷 사당(Sadang) 테마",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "ghost": ">=4.0.0"
   },

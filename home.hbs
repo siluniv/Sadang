@@ -62,16 +62,20 @@
   <div id="home-post-tab-2" class="c-home__post-tab--content">{{> home/featured-posts }}</div>
 </div>
 
+
+
 {{#unless @member}}
 <div class="c-home__promotion--container bg-accent">
   <div class="c-home__promotion">
     <div class="c-home__promotion--content">{{ @custom.newsletter_form_title }}</div>
+    {{#if @price.use}}
     {{#link href="/membership/" class="c-home__promotion--link"}}{{t 'Membership' }}{{/link}}
+    {{else}}
+    {{#link href="/signin/" class="c-home__promotion--link"}}{{ @custom.newsletter_form_button_text }}{{/link}}
+    {{/if}}
   </div>
 </div>
 {{/unless}}
-
-{{shop.use_shop}}
 
 {{> shop }}
 
