@@ -1,0 +1,73 @@
+    <style>
+    /* For Bluedot */
+    :root {
+      /* --body-background: var(--background-primary); */
+      --body-background: {{ @custom.brand_background_color }};
+      --content-background: var(--background-primary);
+
+      --paywall-background:rgba(0,0,0,0.8);
+      --text:var(--color-text);
+      --sub-text:var(--color-gray);
+      --accent-color: {{ @site.accent_color }};
+      --shop-accent-color: {{ @custom.shop_point_color }};
+      --shop-accent-background-color: {{ @custom.shop_point_background_color }};
+    }
+    .bluedot-signin h3.signin-subtitle {
+      color:var(--text);
+    }
+
+    .bluedot-footer { padding-top:20px; padding-bottom:30px; }
+    .bluedot-footer h2 { display:none; }
+
+    /* Style */
+body {
+  background-color: var(--body-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.have-paywall-message .post-content:after {
+  background: linear-gradient( 0deg, var(--body-background) 14%, hsla(0, 0%, 100%, 0) );
+}
+
+     body,
+    .c-post-card__excerpt,
+    .c-content dl,
+    .c-content fieldset,
+    .c-content form,
+    .c-content ol,
+    .c-content p,
+    .c-content pre,
+    .c-content ul
+    {
+        font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .c-post-card__title {
+        font-size: 22px;
+        line-height: 30px;
+        word-break: keep-all;
+    }
+
+    .c-post-card__excerpt {
+        font-size: 14px;
+		line-height: 24px;
+    }
+
+    @media (min-width: 64em) {
+		.c-post-card__title {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+
+    .c-post-card:active .c-post-card__title-link, .c-post-card:focus .c-post-card__title-link, .c-post-card:hover .c-post-card__title-link {
+      border-color:#04a6d7;
+    }
+    </style>

@@ -1,0 +1,97 @@
+/*------------------------------------*\
+  Components > Member Plan
+\*------------------------------------*/
+
+.c-membership-plans {
+  border-radius: $space-4;
+  background-color: var(--background-secondary);
+
+  @include mq($from: desktop) {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
+.c-membership-plan {
+  padding: $space-32;
+
+  @include mq($from: desktop) {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: $space-40;
+  }
+
+  + .c-membership-plan {
+    @include mq($until: desktop) {
+      border-top: 1px solid var(--background-primary);
+    }
+
+    @include mq($from: desktop) {
+      border-left: 2px solid var(--background-primary);
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding-bottom: $space-24;
+  }
+
+  &__title {
+    font-size: $type--h-xxs;
+    line-height: $type--h-xxs-lh;
+    font-weight: $type-600;
+    margin-bottom: $space-16;
+  }
+
+  &__sign {
+    font-size: $type-lg;
+    line-height: $type-lg-lh;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: $space-4;
+  }
+
+  &__amount {
+    font-size: $type--h-lg;
+    line-height: $type--h-lg-lh;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: $space-32;
+
+    li {
+      position: relative;
+      font-size: $type-xs;
+      line-height: $type-xs-lh;
+      padding: 0 0 $space-16 $space-24;
+
+      &:before {
+        display: block;
+        position: absolute;
+        content: '✓';
+        left: 0;
+        top: - $space-4;
+        font-size: $type-sm;
+        line-height: $type-sm-lh;
+        font-weight: $type-700;
+        color: var(--color-success);
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

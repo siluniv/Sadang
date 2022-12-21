@@ -1,0 +1,24 @@
+{{!--
+  Show three recent posts
+  Change the limit value from 3 to whatever number you want to show. If you want to show all the posts, use limit='all'
+--}}
+{{#get 'posts' limit='10'}}
+  {{#if posts}}
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+        <div class='c-title-bar'>
+          <h3 class='c-title-bar__title'>{{t 'Recent Posts' }}</h3>
+          <span class='c-title-bar__divider'></span>
+        </div>
+      </div>
+    </div>
+
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+        {{#foreach posts}}
+          {{> post-card}}
+        {{/foreach}}
+      </div>
+    </div>
+  {{/if}}
+{{/get}}

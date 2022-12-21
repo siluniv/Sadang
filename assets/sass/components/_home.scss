@@ -1,0 +1,280 @@
+/*------------------------------------*\
+  Components > Hero
+\*------------------------------------*/
+
+.c-home {
+  margin-bottom: $space-32;
+  background-color: var(--background-hero);
+
+  @include mq($from: desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: $space-40;
+    grid-template-areas: 'media content';
+    margin-bottom: $space-40;
+
+    &--content-only {
+      display: block;
+    }
+  }
+
+  &--content-only {
+    border-radius: $space-4;
+  }
+
+  &__wrap {
+    border: 1px solid #000;
+  }
+
+  &__media {
+    margin-left: -16px;
+    margin-right: -16px;
+
+    @include mq($from: tablet) {
+      margin: 0;
+    }
+
+    @include mq($from: desktop) {
+      grid-area: media;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+
+    @include mq($until: tablet) {
+      margin: auto;
+    }
+  }
+
+  &__content {
+    padding: $space-32;
+
+    @include mq($from: desktop) {
+      grid-area: content;
+      display: flex;
+      align-items: center;
+      padding: $space-40 $space-40 $space-40 0;
+
+      &--only {
+        padding: $space-40;
+      }
+    }
+  }
+}
+
+
+.c-hero {
+
+  @include mq($from: desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+
+    border: 1px solid #000;
+  }
+
+  &--content-only {
+    display: block
+  }
+
+  &__wrap {
+    max-width: 1072px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #000;
+
+    @include mq($from: desktop) {
+      border-bottom: none;
+      padding: 0 36px;
+      padding-top: 40px;
+    }
+  }
+
+  &__media {
+    background-color: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 540px;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: flex;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__tx {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px 0;
+  }
+
+  &__support {
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &__content {
+
+    text-align: center;
+    padding: 0 16px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    max-width: 500px;
+
+    @include mq($from: desktop) {
+      padding: 0 54px;
+    }
+
+    &--wrap {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+
+  }
+
+  &__membership {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--link {
+      height: 40px;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100rem;
+      border: 1px solid #000;
+
+      text-decoration: none !important;
+      color: #000;
+      font-size: 14px;
+      font-weight: 700;
+
+      transition: all ease 0.2s;
+
+      &:hover {
+        color: #fff !important;
+        background-color: #000;
+      }
+    }
+  }
+}
+
+.c-home__promotion {
+
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1064px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  align-items: center;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 32px;
+  }
+
+  &--container {
+    padding: 53px 0;
+  }
+
+  &--content {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Nanum Myeongjo', serif;
+    padding: 0 32px;
+
+    @include mq($from: landscape) {
+      padding: 0;
+      max-width: 40%;
+    }
+  }
+
+  &--link {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    max-width: 200px;
+    width: 100%;
+    color: #fff;
+    background-color: #000;
+    border-radius: 100rem;
+
+    transition: all ease 0.3s;
+
+    &:hover {
+      background-color: #464646;
+
+    }
+  }
+}
+
+
+.c-home__post-tab {
+  &s {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid #000;
+
+    @include mq($from: desktop) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &--link {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #999999;
+
+    &.current {
+      color: #000;
+    }
+  }
+
+  &--content {
+    display: none;
+
+    &.current {
+      display: block;
+    }
+
+    .c-title-bar {
+      display: none;
+    }
+  }
+}

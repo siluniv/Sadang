@@ -1,0 +1,29 @@
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+  <title>{{{block 'title'}}}</title>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+  {{> fonts }}
+  {{> compiled/inline-css }}
+
+  <link rel="stylesheet" href="{{asset "public/bluedot.css" hasMinFile="true"}}"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  {{> css/style }}
+
+  <script>
+    var site_url                            = '{{ @site.url }}',
+        pagination_next_page_number         = '{{ pagination.next }}',
+        pagination_available_pages_number   = '{{ pagination.pages }}',
+        pagination_loading_text             = '{{t "Loading" }}',
+        pagination_more_posts_text          = '{{t "More Posts ↓" }}',
+        clipboard_copied_text               = '{{t "Link copied to clipboard" }}';
+
+    var bluedot_user_id = {{#if @member}}'{{@member.uuid}}'{{else}}null{{/if}};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  {{ ghost_head }}
+</head>

@@ -1,0 +1,34 @@
+<div class='c-membership-plans'>
+  <div class='c-membership-plan'>
+    <header class='c-membership-plan__header'>
+      <h2 class='c-membership-plan__title'>{{t 'Monthly'}}</h2>
+      <span class='c-membership-plan__sign u-type-uppercase'>{{ price currency=@price.currency }}</span>
+      <span class='c-membership-plan__amount'>{{ @price.monthly }}</span>
+    </header>
+    <div class='c-membership-plan__content'>
+      <ul class='c-membership-plan__list'>
+        <li>Full access to all private posts</li>
+        <li>Regular updates with new content</li>
+        <li>Support independent publishing</li>
+      </ul>
+      <a class='c-btn c-btn--outline' href='javascript:void(0)' data-members-plan='Monthly'>{{t 'Subscribe'}}</a>
+    </div>
+  </div>
+
+  <div class='c-membership-plan'>
+    <header class='c-membership-plan__header'>
+      <h2 class='c-membership-plan__title'>{{t 'Yearly'}}</h2>
+      <span class='c-membership-plan__sign u-type-uppercase'>{{ price currency=@price.currency }}</span>
+      <span class='c-membership-plan__amount'>{{ @price.yearly }}</span>
+    </header>
+    <div class='c-membership-plan__content'>
+      <ul class='c-membership-plan__list'>
+        <li>Full access to all private posts</li>
+        <li>Regular updates with new content</li>
+        <li>Support independent publishing</li>
+        <li>One easy payment instead of 12!</li>
+      </ul>
+      <a class='c-btn c-btn--outline' href='javascript:void(0)' data-members-plan='Yearly'>{{t 'Subscribe'}}</a>
+    </div>
+  </div>
+</div>

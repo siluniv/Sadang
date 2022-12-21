@@ -1,0 +1,67 @@
+{
+  "Skip to content": "içeriğe geç",
+
+  "Loading": "Yükleniyor",
+  "More Posts ↓": "Daha Fazla Gönderi ↓",
+  "All Posts →": "Tüm gönderiler →",
+
+  "Recent Posts": "Son Gönderiler",
+  "Featured Post": "Öne Çıkan Gönderiler",
+  "Page Not Found": "Sayfa Bulunamadı",
+  "Published with {ghostLink} & {themeLink}": "{ghostLink} ve {themeLink} ile oluşturuldu",
+
+  "Share on Twitter": "Twitter'da Paylaş",
+  "Share on Facebook": "Facebook'ta Paylaş",
+  "Share on LinkedIn": "LinkedIn'de Paylaş",
+  "Share on Pinterest": "Pinterest'te Paylaş",
+  "Share via Email": "E-Posta ile Paylaş",
+  "Copy link": "Bağlantıyı kopyala",
+  "Link copied to clipboard": "Bağlantı panoya kopyalandı",
+
+  "Archive": "Arşiv",
+  "Tags": "Etiketler",
+  "1 min read": "1 dakikada okunur",
+  "% min read": "% dakikada okunur",
+
+  "Paid": "Ücretli",
+  "Members": "Üyeler",
+  "Public": "Herkese Açık",
+
+  "Account": "Hesap",
+  "Log in": "Giriş Yap",
+  "Log out": "Çıkış Yap",
+  "Continue": "Devam Et",
+  "Subscribe": "Abone Ol",
+  "Membership": "Üyelik",
+  "Your email address": "E-Posta adresiniz",
+  "{siteTitle} Newsletter": "{siteTitle} Haber bülteni",
+  "Please check your inbox and click the link to complete the login.": "Lütfen gelen kutunuzu kontrol edin ve girişi tamamlamak için bağlantıya tıklayın.",
+  "Please check your inbox and click the link to confirm your subscription.": "Lütfen gelen kutunuzu kontrol edin ve aboneliğinizi onaylamak için bağlantıya tıklayın.",
+  "Please enter a valid email address!": "Lütfen geçerli bir e-posta adresi girin!",
+  "An error occurred, please try again later.": "Bir hata meydana geldi, lütfen tekrar deneyin.",
+
+  "Already have an account?": "Zaten bir hesabınız var mı?",
+  "Don't have an account yet?": "Henüz bir hesabınız yok mu?",
+
+  "This Content Is for Members": "Bu İçerik Üyeler içindir",
+  "This Content Is for Paid Members": "Bu İçerik Ücretli Üyeler içindir",
+  "Become a subscriber to access all of our content.": "Bültene abone olun ve son güncellemeleri gelen kutunuza alın.",
+
+  "Premium Membership": "Premium Üyelik",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content.": "{siteTitle} için tam erişimin kilidini açın ve yalnızca üyelere özel içerik kitaplığının tamamını görün.",
+  "Subscribe to {siteTitle}": "{siteTitle} sitesine Abone Olun",
+  "Monthly": "Aylık",
+  "Yearly": "Yıllık",
+
+  "Log in to {siteTitle}": "{SiteTitle} sitesine giriş yapın",
+  "Send login link": "Giriş bağlantısını gönder",
+
+  "Your subscription will expire on": "Aboneliğiniz şu tarihte sona erecek",
+  "Your plan": "Planınız",
+  "Card": "Kart",
+  "Expires": "Süre Sonu",
+  "Next bill date": "Bir sonraki fatura tarihi",
+  "Edit billing info": "Ödeme bilgisini düzenle",
+  "You have an active {siteTitle} account with access to all posts.": "{siteTitle} sitesindeki tüm içeriklere erişimi olan bir hesaba sahipsiniz.",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "{siteTitle} sitesindeki ücretsiz içeriklere abonesiniz, ancak tüm içeriklere erişebilmek için ücretli abonelik edinmeniz gerekmektedir."
+}

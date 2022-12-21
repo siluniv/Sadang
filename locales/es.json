@@ -1,0 +1,67 @@
+{
+  "Skip to content": "ir al contenido",
+
+  "Loading": "Cargando",
+  "More Posts ↓": "Más artículos ↓",
+  "All Posts →": "Todos los artículos →",
+
+  "Recent Posts": "Artículos recientes",
+  "Featured Posts": "Artículos destacados",
+  "Page Not Found": "Página no encontrada",
+  "Published with {ghostLink} & {themeLink}": "Publicado con {ghostLink} y {themeLink}",
+
+  "Share on Twitter": "Compartir en Twitter",
+  "Share on Facebook": "Compartir en Facebook",
+  "Share on LinkedIn": "Compartir en LinkedIn",
+  "Share on Pinterest": "Compartir en Pinterest",
+  "Share via Email": "Compartir por Email",
+  "Copy link": "Copiar link",
+  "Link copied to clipboard": "Enlace copiado al portapapeles",
+
+  "Archive": "Archivo",
+  "Tags": "Etiquetas",
+  "1 min read": "1 minuto de lectura",
+  "% min read": "% minutos de lectura",
+
+  "Paid": "Pagado",
+  "Members": "Miembros",
+  "Public": "Público",
+
+  "Account": "Cuenta",
+  "Log in": "Registrarse",
+  "Log out": "Cerrar sesión",
+  "Continue": "Continuar",
+  "Subscribe": "Suscríbete",
+  "Membership": "Registrados",
+  "Your email address": "Tu correo electrónico",
+  "{siteTitle} Newsletter": "{siteTitle} newsletter",
+  "Please check your inbox and click the link to complete the login.": "Verifica tu bandeja de entrada y haz clic en el enlace para completar el inicio de sesión.",
+  "Please check your inbox and click the link to confirm your subscription.": "Verifica tu bandeja de entrada y haz clic en el enlace para confirmar tu suscripción.",
+  "Please enter a valid email address!": "Por favor, introduce una dirección de correo electrónico válida",
+  "An error occurred, please try again later.": "Se ha producido un error. Vuelve a intentarlo más tarde.",
+
+  "Already have an account?": "¿Ya estás registrado?",
+  "Don't have an account yet?": "¿Todavía no tienes una cuenta?",
+
+  "This Content Is for Members": "Este contenido es para suscriptores",
+  "This Content Is for Paid Members": "Este contenido es para suscriptores de pago",
+  "Become a subscriber to access all of our content.": "Únete a la newsletter para recibir las últimas actualizaciones en tu bandeja de entrada.",
+
+  "Premium Membership": "Suscripción premium",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content.": "Desbloquea el acceso completo a {siteTitle} y para poder ver todo el contenido exclusivo para suscriptores.",
+  "Subscribe to {siteTitle}": "Regístrate en {siteTitle}",
+  "Monthly": "Mensual",
+  "Yearly": "Anual",
+
+  "Log in to {siteTitle}": "Entra en {siteTitle}",
+  "Send login link": "Login",
+
+  "Your subscription will expire on": "Tu suscripción caducará el",
+  "Your plan": "Tu plan",
+  "Card": "Tarjeta",
+  "Expires": "Expira",
+  "Next bill date": "Fecha de la próxima factura",
+  "Edit billing info": "Editar información de facturación",
+  "You have an active {siteTitle} account with access to all posts.": "Tienes una cuenta activa {siteTitle} con acceso a todas las publicaciones.",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "Estás suscrito a las actualizaciones gratuitas de {siteTitle}, pero no tienes una suscripción premium para leer todas las publicaciones."
+}

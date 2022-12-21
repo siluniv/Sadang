@@ -1,0 +1,50 @@
+/*------------------------------------*\
+  Components > Drop Caps
+\*------------------------------------*/
+
+.u-drop-cap::first-letter {
+  float: left;
+  font-size: 96px;
+  line-height: 66.9px;
+  font-weight: $type-400;
+  margin-top: 10px;
+  margin-right: $space-8 + $space-4;
+  font-family: Georgia, serif;
+}
+
+.u-drop-cap-large::first-letter {
+  float: left;
+  font-size: 135px;
+  line-height: 94px;
+  font-weight: $type-400;
+  margin-top: 10px;
+  margin-right: $space-16;
+  font-family: Georgia, serif;
+}
+
+.u-drop-cap--block-small::first-letter {
+  float: left;
+  font-size: 50px;
+  line-height: 35px;
+  font-weight: $type-400;
+  margin-top: 10px;
+  margin-right: $space-16;
+  padding: $space-16;
+  font-family: Georgia, serif;
+  color: var(--background-primary);
+  background: var(--color-text-primary);
+}
+
+.u-drop-cap--block-large::first-letter {
+  float: left;
+  font-size: 80px;
+  line-height: 55px;
+  font-weight: $type-400;
+  margin-top: 10px;
+  margin-right: $space-16;
+  padding: 20px 24px 20px 24px;
+  font-family: Georgia, serif;
+  color: var(--background-primary);
+  color: var(--background-primary);
+  background: var(--color-text-primary);
+}

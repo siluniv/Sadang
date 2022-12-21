@@ -1,0 +1,28 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <article class='c-{{ post_class }}'>
+      {{> post-header }}
+
+      {{#if access}}
+      <section class='c-content'>
+        {{ content }}
+      </section>
+
+      {{else}}
+          <!-- from bluedot -->
+          {{bluedot_paywall}}
+      {{/if}}
+      <hr>
+    </article>
+  </div>
+</div>
+
+{{bluedot_paywall_popup}}
+
+{{/post}}

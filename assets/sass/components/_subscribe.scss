@@ -1,0 +1,301 @@
+/*------------------------------------*\
+  Components > Subscribe Form
+\*------------------------------------*/
+
+.c-subscribe {
+  position: relative;
+  overflow: hidden;
+  padding: $space-32;
+  border-radius: $space-4;
+  background-color: var(--background-secondary);
+
+  @include mq($from: tablet) {
+    padding: $space-64;
+  }
+
+  @include mq($from: desktop) {
+    padding: $space-96;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 540px;
+    margin: auto;
+  }
+
+  &__heading {
+    font-size: $type--h-xs;
+    line-height: $type--h-xs-lh;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -141px;
+    right: -121px;
+
+    svg {
+      fill: var(--background-primary);
+    }
+  }
+}
+
+.c-subscribe-form {
+  &__wrap {
+    padding-bottom: 40px;
+  }
+
+  .c-alert {
+    display: none;
+  }
+
+  .c-btn {
+    @extend .c-btn--loading;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &.loading .c-btn {
+    &:after {
+      display: block;
+    }
+  }
+
+  &.success .c-alert--success,
+  &.invalid .c-alert--invalid,
+  &.error   .c-alert--error  {
+    display: block;
+  }
+
+  &__input {
+    min-width: 350px;
+  }
+}
+
+.c-form-group {
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  @include mq($from: tablet) {
+    display: flex;
+  }
+
+  &__btn {
+    @include mq($until: tablet) {
+      width: 100%;
+    }
+
+    @include mq($from: tablet) {
+      flex: 3;
+      margin-left: $space-16;
+    }
+  }
+
+  .c-form-group__input {
+    border-radius: 0;
+    border: 1px solid #000;
+    background-color: #f5f5f5;
+
+    @include mq($until: tablet) {
+      margin-bottom: $space-16;
+    }
+  }
+}
+
+
+.c-subscribe__main {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  padding: 0 16px;
+
+  &--title {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Nanum Myeongjo', serif;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include mq($from: tablet) {
+      padding: 0 54px;
+      max-width: 580px;
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+  }
+
+  &--form {
+    max-width: 768px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+
+    @include mq($from: tablet) {
+      flex-wrap: nowrap;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .c-subscribe__main--form-input {
+      width: 100%;
+      border: 1px solid #000;
+      border-radius: 0;
+      background-color: #f5f5f5;
+      font-size: 14px;
+      font-weight: 500;
+
+      height: 45px;
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      @include mq($from: tablet) {
+        max-width: 350px;
+        width: 350px;
+      }
+    }
+
+    .c-subscribe__main--form-submit {
+      height: 45px;
+      width: 100%;
+      min-width: 160px;
+      padding: 0 24px;
+      background-color: #000;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all ease 0.3s;
+
+      @include mq($from: tablet) {
+        width: fit-content;
+      }
+
+      &:hover {
+        background-color: #464646;
+        border-color: #464646;;
+      }
+    }
+  }
+}
+
+
+.c-subscribe__g {
+  margin-bottom: 60px;
+  padding: 32px 16px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+  @include mq($from: tablet) {
+    display: flex;
+    gap: 32px;
+    padding: 32px 0;
+  }
+
+  &--side {
+    @include mq($from: tablet) {
+      flex-grow: 1;
+    }
+  }
+
+  &--label {
+    display: none;
+    color: #3c7eff;
+    font-size: 11px;
+    font-weight: 700;
+
+    @include mq($from: tablet) {
+      display: block;
+    }
+  }
+
+  &--title {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Nanum Myeongjo', serif;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include mq($from: tablet) {
+      margin-bottom: 0;
+      font-size: 14px;
+      text-align: start;
+    }
+  }
+
+  &--form {
+    max-width: 768px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+
+    @include mq($from: tablet) {
+      flex-wrap: nowrap;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .c-subscribe__g--form-input {
+      max-width: 300px;
+      width: 100%;
+      border: 1px solid #000;
+      border-radius: 0;
+      background-color: #f5f5f5;
+      font-size: 14px;
+      font-weight: 500;
+
+      height: 45px;
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      @include mq($from: tablet) {
+        width: 350px;
+      }
+    }
+
+    .c-subscribe__g--form-submit {
+      height: 45px;
+      min-width: 90px;
+      padding: 0 24px;
+      background-color: #000;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all ease 0.3s;
+
+      &:hover {
+        background-color: #464646;
+        border-color: #464646;;
+      }
+    }
+  }
+}

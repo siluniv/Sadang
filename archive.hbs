@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{t 'Archive' }}{{/contentFor}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <div class='c-archive'>
+      <h1 class='c-archive__title'>{{t 'Archive' }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    {{#get 'posts' limit='all' as |posts|}}
+      {{#if posts}}
+        {{#foreach posts}}
+          <div class='c-card-archive c-card-archive--date-{{date format='M'}}'>
+            <div class='c-card-archive__meta'>
+              <div class='c-card-archive__date'>{{ date format='YYYY-MM-DD' }}</div>
+            </div>
+
+            <div class='c-card-archive__content'>
+              <h2 class='c-card-archive__title'>
+                <time class='c-card-archive__date-mini' datetime='{{ date format='YYYY-MM-DD' }}' title='{{ date format='YYYY-MM-DD' }}'>{{ date format='DD' }}:</time>
+                <a href='{{ url }}' class='c-card-archive__url'>{{ title }}</a>
+              </h2>
+            </div>
+          </div>
+        {{/foreach}}
+      {{/if}}
+    {{/get}}
+  </div>
+</div>
+
+{{!-- Show all website tags --}}
+{{#get 'tags' limit='all'}}
+  {{#if tags}}
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+        <div class='c-title-bar'>
+          <h3 class='c-title-bar__title'>{{t 'Tags' }}</h3>
+          <span class='c-title-bar__divider'></span>
+        </div>
+      </div>
+    </div>
+
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+        <div class='c-archive-tags'>
+          {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+            {{#foreach tags}}
+              <a href='{{ url }}'>
+                <div>{{ name }}<sup class='u-type-xs u-type-400'>({{ count.posts }})</sup></div>
+              </a>
+            {{/foreach}}
+          {{/get}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+{{/get}}

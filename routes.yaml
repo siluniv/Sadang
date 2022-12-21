@@ -1,0 +1,18 @@
+routes:
+  /membership/: members/membership
+  /signup/: members/signup
+  /signin/: members/signin
+  /account/: members/account
+  /blog/:
+    controller: channel
+    template: blog
+    filter: tag:-home
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: home
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

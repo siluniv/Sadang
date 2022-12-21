@@ -1,0 +1,63 @@
+// *----------------------------------*\
+//  Settings > Type
+// *----------------------------------*/
+
+:root {
+  --line-height-base:  1.5;
+  --type-sans-serif:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+// Type Scale
+// Inspired by: https://mozilla.design/firefox/typography/
+// lh == Line Height
+
+// Heading
+
+$type--h-xxl:  64px;
+$type--h-xl:   56px;
+$type--h-lg:   48px;
+$type--h-md:   40px;
+$type--h-sm:   32px;
+$type--h-xs:   28px;
+$type--h-xxs:  24px;
+$type--h-xxxs: 18px;
+$type--h-xxxxs: 18px;
+
+$type--h-xxl-lh:  72px;
+$type--h-xl-lh:   64px;
+$type--h-lg-lh:   56px;
+$type--h-md-lh:   48px;
+$type--h-sm-lh:   40px;
+$type--h-xs-lh:   32px;
+$type--h-xxs-lh:  26px;
+$type--h-xxxs-lh: 20px;
+$type--h-xxxxs-lh: 20px;
+
+$type--h-18: 18px;
+$type--h-15: 15px;
+$type--h-14: 14px;
+$type--h-10: 10px;
+
+// Body Text
+
+$type-xl: 18px;
+$type-lg: 16px;
+$type-md: 14px;
+$type-sm: 13px;
+$type-xs: 12px;
+
+$type-xl-lh: 28px;
+$type-lg-lh: 26px;
+$type-md-lh: 22px;
+$type-sm-lh: 20px;
+$type-xs-lh: 14px;
+
+$type-10: 10px;
+$type-14: 14px;
+
+// Type Weights
+$type-300: 300;
+$type-400: 400;
+$type-500: 500;
+$type-600: 600;
+$type-700: 700;

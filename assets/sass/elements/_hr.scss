@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  Elements > hr
+\*------------------------------------*/
+
+hr {
+  border: 0;
+  margin-bottom: $space-32;
+
+  &.seperator {
+    margin-top: $space-32;
+    border-bottom: 1px solid var(--color-border);
+  }
+}

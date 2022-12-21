@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <article class='c-{{ post_class }}'>
+      {{> post-header }}
+
+      <section class='c-content'>
+        {{ content }}
+      </section>
+
+      {{#unless access}}
+    <div class="bluedot-wrapper" style="margin:1rem 0;">
+        <div class="bluedot-main bluedot-signin outer">
+            <div class="inner">
+                {{!-- <h1 class="signin-title">{{t 'Subscription Plans'}}</h1>
+                <h3 class="signin-subtitle">{{{@site.paywall.paywallMessage}}}</h3> --}}
+
+                <div class="price-info-wrap light">
+                    {{bluedot_price}}
+                </div>
+            </div>
+        </div>
+    </div>
+      {{/unless}}
+      <hr>
+    </article>
+  </div>
+</div>
+
+{{bluedot_paywall_popup}}
+
+{{/post}}

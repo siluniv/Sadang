@@ -1,0 +1,47 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{!-- Show the custom homepage content --}}
+{{#page}}
+  {{#if feature_image}}
+    <div class='o-grid'>
+      <div class='o-grid__col'>
+        <div class='c-home-wide-media'>
+          <img
+            alt='{{ title }}'
+            class='c-home-image-wide lazyload'
+            data-srcset='
+              {{ img_url feature_image size='home-image-wide-small' }}  536w,
+              {{ img_url feature_image size='home-image-wide-medium' }} 1120w,
+              {{ img_url feature_image size='home-image-wide-large' }}  2240w'
+            sizes='(min-width: 1280px) 1120px, (min-width: 640px) 87.74vw, calc(100vw - 32px)'
+            data-src='{{ img_url feature_image size='home-image-wide-large' }}'
+          >
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+      <div class='c-home-wide-content'>
+        <section class='c-content'>
+          {{ content }}
+
+          {{#unless @member}}
+            {{> subscribe-form inputLabel='subscribe-home-intro'}}
+          {{/unless}}
+        </section>
+      </div>
+    </div>
+  </div>
+{{/page}}
+
+{{> home/featured-posts }}
+
+{{> home/recent-posts }}
+
+{{> home/all-posts-link }}
+
+{{> subscribe-box }}

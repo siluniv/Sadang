@@ -1,0 +1,9 @@
+bower_components/jquery/dist/jquery.js
+bower_components/bootstrap-transition/scripts/transition.js
+bower_components/zoom.js/dist/zoom.js
+bower_components/jquery.fitvids/jquery.fitvids.js
+node_modules/lazysizes/lazysizes.min.js
+node_modules/evil-icons/assets/evil-icons.min.js
+node_modules/clipboard/dist/clipboard.js
+node_modules/prismjs/prism.js
+assets/js/app.js

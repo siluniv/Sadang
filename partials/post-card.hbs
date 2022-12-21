@@ -1,0 +1,50 @@
+<div class="c-post-card__wrap{{#unless no-js}} js-post-card__wrap{{/unless}}">
+  {{#primary_tag}}
+  <div class="c-post-card__tag">
+    <div class="c-post-card__tag--name">
+      <a class="c-post-card__tag--link" href="{{url}}">{{name}}</a>
+    </div>
+  </div>
+  {{/primary_tag}}
+  <div class='c-post-card{{#unless no-js}} js-post-card{{/unless}} {{ post_class }} {{#unless feature_image}} c-post-card--no-image {{/unless}} {{#if cardWidth}} c-post-card--wide {{/if}}'>
+    <div class='c-post-card__meta'>
+      <time class='c-post-card__date' datetime='{{ date format='YYYY-MM-DD' }}'>{{ date format='YYYY-MM-DD' }}</time>
+
+      <div class='is-membership
+                  c-post-card__visibility
+                  c-post-card__visibility--{{ visibility }}
+                  {{#if @member.paid}}
+                    c-post-card__visibility--is-paid-member
+                  {{else if @member}}
+                    c-post-card__visibility--is-member
+                  {{/if}}'>
+        <span class='paid'>{{t 'Paid' }}</span>
+        <span class='members'>{{t 'Members' }}</span>
+        <span class='public'>{{t 'Public' }}</span>
+      </div>
+    </div>
+
+    <div class='c-post-card__content'>
+      <h2 class='c-post-card__title'>
+        <a href='{{ url }}' class='c-post-card__url'>{{ title }}</a>
+      </h2>
+      <p class='c-post-card__excerpt'>{{ excerpt }}</p>
+    </div>
+
+    {{#if feature_image}}
+      <div class='c-post-card__media'>
+        <div class='c-post-card__image-wrap'>
+          <img
+            alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+            class='c-post-card__image lazyload'
+            data-srcset='
+              {{ img_url feature_image size='post-image' }} 612w,
+              {{ img_url feature_image size='post-image-large' }} 1462w'
+            sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+            data-src='{{ img_url feature_image size='post-image-large' }}'
+          >
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</div>

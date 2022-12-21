@@ -1,0 +1,27 @@
+
+{{#if @site.instagram}}
+<li class='c-nav__item c-nav__item--social'>
+  <a href='{{ instagram_url }}' title='Instagram' target='_blank' rel='noopener'>
+    <span class='c-nav__item__icon' data-icon='ei-sc-instagram' data-size='s'></span>
+    <span class='u-hidden-visually'>Instagram</span>
+  </a>
+</li>
+{{/if}}
+
+{{#if @site.twitter}}
+  <li class='c-nav__item c-nav__item--social'>
+    <a href='{{ twitter_url }}' title='Twitter' target='_blank' rel='noopener'>
+      <span class='c-nav__item__icon' data-icon='ei-sc-twitter' data-size='s'></span>
+      <span class='u-hidden-visually'>Twitter</span>
+    </a>
+  </li>
+{{/if}}
+
+{{#if @site.facebook}}
+  <li class='c-nav__item c-nav__item--social'>
+    <a href='{{ facebook_url }}' title='Facebook' target='_blank' rel='noopener'>
+      <span class='c-nav__item__icon' data-icon='ei-sc-facebook' data-size='s'></span>
+      <span class='u-hidden-visually'>Facebook</span>
+    </a>
+  </li>
+{{/if}}

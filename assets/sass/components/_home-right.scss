@@ -1,0 +1,56 @@
+/*------------------------------------*\
+  Components > Hero
+\*------------------------------------*/
+
+.c-home-right {
+  margin-bottom: $space-32;
+  background-color: var(--background-hero);
+
+  @include mq($from: desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: $space-40;
+    grid-template-areas: 'content media';
+    margin-bottom: $space-40;
+
+    &--content-only {
+      display: block;
+    }
+  }
+
+  &--content-only {
+    border-radius: $space-4;
+  }
+
+  &__media {
+    @include mq($from: desktop) {
+      grid-area: media;
+    }
+  }
+
+  &__image {
+    margin: auto;
+
+    @include mq($from: desktop) {
+      margin-left: auto;
+      margin-right: initial;
+    }
+  }
+
+  &__content {
+    padding: $space-32;
+
+    @include mq($from: desktop) {
+      grid-area: content;
+      display: flex;
+      align-items: center;
+      padding: $space-40 0 $space-40 $space-40;
+
+      &--only {
+        padding: $space-40;
+        border-radius: $space-4;
+      }
+    }
+  }
+}

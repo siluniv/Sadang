@@ -1,0 +1,211 @@
+/*------------------------------------*\
+  Components > Footer
+\*------------------------------------*/
+
+.c-footer {
+  padding: $space-32 0;
+  margin-top: $space-32;
+  text-align: center;
+}
+
+.c-footer-copy {
+  color: var(--color-text-secondary);
+  font-size: $type-xs;
+  line-height: $type-xs-lh;
+
+  a {
+    color: var(--color-text-secondary);
+
+    @include attention() {
+      color: var(--color-brand);
+    }
+  }
+}
+
+.c-footer-nav {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-bottom: $space-8;
+
+  li {
+    @include mq($until: desktop) {
+      margin-bottom: $space-4;
+    }
+
+    &:not(:last-child) {
+      margin-right: $space-16;
+    }
+  }
+
+  a {
+    font-size: $type-xs;
+    line-height: $type-xs-lh;
+    color: var(--color-text-secondary);
+
+    &:after {
+      height: 0;
+    }
+
+    @include attention() {
+      color: var(--color-brand);
+    }
+  }
+}
+
+// Footer for User - Extra Footer
+.footer-ex {
+
+  @include mq($from: desktop) {
+    display: flex;
+  }
+
+  &__wrap {
+    background-color: #F6F5F7;
+    padding: 40px 0 80px;
+  }
+
+  &__container {
+    padding: 0 40px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      max-width: 180px;
+      max-height: 40px;
+      object-fit: contain;
+
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+
+  &__site {
+    @include mq($from: desktop) {
+      flex-grow: 1;
+      max-width: 50%;
+    }
+
+    &-info {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-top: 20px;
+
+      &--item {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 2;
+        color: #0A142F;
+        opacity: .5;
+      }
+    }
+  }
+
+  &__sns {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    column-gap: 28px;
+  }
+
+  // Navigation
+  &__nav {
+    margin-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 74px;
+
+    @include mq($from: desktop) {
+      margin-top: 0;
+      gap: 120px;
+    }
+
+    &-menu {
+
+      &--label {
+        font-size: 15px;
+        font-weight: 700;
+        color: #0A142F;
+      }
+
+      &--list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-top: 26px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+
+        li, a {
+          font-size: 13px;
+          font-weight: 500;
+          color: #0A142F;
+          opacity: 0.7;
+          line-height: 1;
+        }
+
+        li {
+          margin-bottom: 0;
+        }
+
+        a {
+          display: inline-block;
+        }
+      }
+    }
+
+  }
+}
+
+[data-user-color-scheme=dark] {
+  .footer-ex {
+    &__wrap {
+      background-color: #0A142F;
+    }
+
+    &__site {
+      &-info {
+        &--item {
+          color: #fff;
+          opacity: .5;
+        }
+      }
+    }
+
+    &__sns {
+      &--item {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+
+    &__nav {
+      &-menu {
+        &--label {
+          color: #fff;
+        }
+
+        &--list {
+          a {
+            color: #fff;
+            opacity: .5;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

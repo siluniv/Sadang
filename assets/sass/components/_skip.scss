@@ -1,0 +1,14 @@
+/*------------------------------------*\
+  Components > Accessibility (a11y)
+\*------------------------------------*/
+
+.c-skip-to-content {
+  position: absolute;
+  top: - $space-48;
+  left: $space-16;
+  padding: $space-4 $space-16;
+
+  &:focus {
+    top: $space-16;
+  }
+}

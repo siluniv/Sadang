@@ -1,0 +1,134 @@
+/*------------------------------------*\
+  Components > Content
+\*------------------------------------*/
+
+.c-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  word-break: break-word;
+
+  > * {
+    min-width: 100%;
+  }
+
+  > * + * {
+    margin-top: $space-24;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: $space-4;
+    color: var(--color-text-primary);
+
+    @include attention() {
+      color: var(--color-brand);
+    }
+  }
+
+  p, blockquote,
+  dl, ol, ul,
+  form,
+  fieldset {
+    font-size: $type-lg;
+    line-height: $type-lg-lh;
+  }
+
+  table {
+    font-size: $type-md;
+    line-height: $type-md-lh;
+  }
+
+  hr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: $space-4;
+    margin-bottom: 0;
+
+    &:before {
+      content: '. . .';
+      color: var(--color-text-primary);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: $space-40;
+    letter-spacing: - $global-letter-spacing;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    + * {
+      margin-top: $space-8;
+    }
+  }
+
+  h1 {
+    font-size: $type--h-sm;
+    line-height: $type--h-sm-lh;
+
+    + h2, + h3, + h4, + h5, + h6 {
+      margin-top: $space-16;
+    }
+  }
+
+  h2 {
+    font-size: $type--h-xs;
+    line-height: $type--h-xs-lh;
+
+    + h3, + h4, + h5, + h6 {
+      margin-top: $space-16;
+    }
+  }
+
+  h3 {
+    font-size: $type--h-xxs;
+    line-height: $type--h-xxs-lh;
+
+    + h4, + h5, + h6 {
+      margin-top: $space-16;
+    }
+  }
+
+  h4 {
+    font-size: $type--h-xxs;
+    line-height: $type--h-xxs-lh;
+
+    + h5, + h6 {
+      margin-top: $space-8;
+    }
+  }
+
+  h5 {
+    font-size: $type--h-xxxs;
+    line-height: $type--h-xxxs-lh;
+
+    + h6 {
+      margin-top: $space-8;
+    }
+  }
+
+  dd, ol, ul {
+    padding-left: $space-8 + $space-4;
+    padding-right: $space-16;
+
+    > * + * {
+      margin-top: $space-8;
+    }
+
+    // Target Safari Only
+    &:not(:root:root) {
+      -webkit-padding-start: $space-8 + $space-4;
+    }
+  }
+
+  // Hide Ghost built-in upgrade call to action box
+  .gh-post-upgrade-cta {
+    display: none;
+    visibility: hidden
+  }
+}

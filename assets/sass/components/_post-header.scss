@@ -1,0 +1,99 @@
+/*------------------------------------*\
+  Components > Post Hero
+\*------------------------------------*/
+
+.c-post-media {
+  &__image {
+    margin: auto;
+  }
+
+  &__caption {
+    text-align: center;
+    padding: $space-16 $space-16 0 $space-16;
+    font-size: $type-xs;
+    line-height: $type-xs-lh;
+    font-weight: $type-500;
+    color: var(--color-text-secondary);
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: $space-4;
+      color: var(--color-text-primary);
+
+      @include attention() {
+        color: var(--color-brand);
+      }
+    }
+  }
+}
+
+.c-post-image {
+  margin: auto;
+}
+
+.c-post-header {
+  > * + * {
+    margin-top: $space-24;
+  }
+
+  &__title {
+    font-size: $type--h-sm;
+    line-height: $type--h-sm-lh;
+    letter-spacing: - $global-letter-spacing;
+  }
+
+  &__excerpt {
+    margin-top: $space-8;
+    font-size: $type-lg;
+    line-height: $type-lg-lh;
+
+    @include mq($from: desktop) {
+      font-size: $type-xl;
+      line-height: $type-xl-lh;
+      letter-spacing: - $global-letter-spacing;
+    }
+  }
+
+  &__meta {
+    font-size: $type-sm;
+    line-height: $type-sm-lh;
+    letter-spacing: $global-letter-spacing;
+
+    @include mq($from: tablet) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+
+    &_name {
+      font-weight: $type-600;
+    }
+  }
+
+  &__date {
+    color: var(--color-text-secondary);
+  }
+
+  &__reading-time {
+    color: var(--color-text-secondary);
+  }
+
+  &__author_media {
+    width: $space-32;
+    height: $space-32;
+    border-radius: 100%;
+    margin-right: $space-8;
+    background-color: var(--background-secondary);
+  }
+
+  &__author_image {
+    width: $space-32;
+    height: $space-32;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+}

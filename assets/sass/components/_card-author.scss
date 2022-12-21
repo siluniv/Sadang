@@ -1,0 +1,54 @@
+/*------------------------------------*\
+  Components > Card Author
+\*------------------------------------*/
+
+.c-card-author {
+  width: 100%;
+  display: flex;
+  padding: $space-32;
+  border-radius: $space-4;
+  background-color: var(--background-secondary);
+
+  &__media {
+    width: $space-80;
+    height: $space-80;
+    border-radius: 100%;
+    margin-right: $space-24;
+    background-color: var(--background-primary);
+  }
+
+  &__image {
+    object-fit: cover;
+    width: $space-80;
+    height: $space-80;
+    min-width: $space-80;
+    border-radius: 100%;
+  }
+
+  &__name {
+    font-size: $type-lg;
+    line-height: $type-lg-lh;
+    font-weight: $type-700;
+
+    a {
+      @include attention() {
+        color: var(--color-brand);
+      }
+    }
+  }
+
+  &__bio {
+    font-size: $type-md;
+    line-height: $type-md-lh;
+    word-break: break-word;
+  }
+
+  .icon {
+    fill: var(--color-text-primary);
+    vertical-align: sub;
+
+    @include attention() {
+      fill: var(--color-brand);
+    }
+  }
+}

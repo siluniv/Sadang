@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  Elements > code & pre
+\*------------------------------------*/
+
+p code,
+li code {
+  padding: $space-4 $space-8;
+  border-radius: $space-4;
+  border: 1px solid var(--color-border);
+  background-color: var(--background-secondary);
+}
+
+code,
+code[class*='language-'] {
+  font-size: $type-sm;
+  line-height: $type-sm-lh;
+  text-shadow: none;
+  color: var(--color-text-primary);
+}
+
+pre,
+pre[class*='language-'],
+.kg-code-card {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: $space-4;
+}
+
+pre,
+pre[class*='language-'] {
+  padding: $space-32;
+  margin-top: $space-24;
+  margin-bottom: 0;
+  background-color: var(--background-secondary);
+}
+
+.kg-code-card pre {
+  margin-top: 0;
+}
+
+.token.operator {
+  background-color: transparent;
+}

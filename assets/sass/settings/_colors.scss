@@ -1,0 +1,25 @@
+// *----------------------------------*\
+//  Settings > Colors
+// *----------------------------------*/
+
+:root {
+  --color-brand: #000000;
+
+  --color-text-primary:   #181818;
+  --color-text-secondary: #999999;
+
+  --color-white:   #FFFFFF;
+  --color-error:   #CC3C64;
+  --color-success: #07815C;
+  --color-border:  #c4c4c4;
+
+  --background-primary: #FFFFFF;
+  --background-secondary: #F6F6F6;
+
+  --background-hero: var(--background-secondary);
+
+  --bg-color:        var(--color-white);
+  --bg-gray:         #EEF1F0;
+  --bg-white:        var(--color-white);
+  --bg-transparent: rgba(255, 255, 255, .7);
+}

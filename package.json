@@ -1,0 +1,169 @@
+{
+  "name": "sadang",
+  "description": "블루닷 사당(Sadang) 테마",
+  "version": "0.0.1",
+  "engines": {
+    "ghost": ">=4.0.0"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "@primer/css": "^15.2.0",
+    "clipboard": "^2.0.8",
+    "concat": "^3.0.0",
+    "evil-icons": "^1.10.1",
+    "fs": "0.0.2",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-size": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.12.0",
+    "jshint-stylish": "^2.2.0",
+    "lazysizes": "^5.3.2",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.23.0",
+    "run-sequence": "^2.2.1",
+    "sass-mq": "^5.0.1"
+  },
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "gulp": "^4.0.2",
+    "gulp-rtlcss": "^1.4.2",
+    "gulp-sass": "^5.0.0",
+    "gulp-zip": "^4.2.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.35.1"
+  },
+  "author": {
+    "name": "Mediasphere",
+    "email": "admin@mediasphere.kr",
+    "url": "https://mediasphere.kr/"
+  },
+  "config": {
+    "custom": {
+      "newsletter_form_title" : {
+        "group": "newsletter_form",
+        "type": "text",
+        "title": "뉴스레터 폼 제목",
+        "default": "뉴스레터"
+      },
+      "newsletter_form_description" : {
+        "group": "newsletter_form",
+        "type": "text",
+        "title": "뉴스레터 폼 설명",
+        "default": "지금 뉴스레터를 구독하세요."
+      },
+      "newsletter_form_button_text" : {
+        "group": "newsletter_form",
+        "type": "text",
+        "title": "뉴스레터 버튼 텍스트",
+        "default": "무료 뉴스레터 구독"
+      },
+      "brand_background_color": {
+        "group": "layout",
+        "type": "color",
+        "default": "#f5f5f5",
+        "title": "메인 배경색"
+      },
+      "shop_point_background_color": {
+        "group": "shop",
+        "type": "color",
+        "default": "#3c7eff",
+        "title": "숍 포인트 배경색"
+      },
+      "shop_point_color": {
+        "group": "shop",
+        "type": "color",
+        "default": "#000000",
+        "title": "숍 포인트 글자색"
+      },
+      "shop_display_status": {
+        "group": "shop",
+        "type": "select",
+        "options": [
+          "on",
+          "off"
+        ],
+        "default": "on",
+        "title": "숍 상품 노출하기",
+        "description": "사이트에서 숍 목록을 표시하려면 on 으로 활성화 하세요."
+      },
+      "shop_posts_per_page": {
+        "group": "shop",
+        "type": "select",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "default": "10",
+        "title": "표시할 숍 상품 수",
+        "description": "숍 목록에 표시할 상품의 수를 선택하세요."
+      }
+    },
+    "posts_per_page": 10,
+    "image_sizes": {
+      "profile-image": {
+        "width": 160
+      },
+      "profile-image-small": {
+        "width": 64
+      },
+      "home-image-default": {
+        "width": 1080
+      },
+      "home-image-ricle": {
+        "width": 192
+      },
+      "home-image-ricle--medium": {
+        "width": 256
+      },
+      "home-image-ricle--large": {
+        "width": 384
+      },
+      "home-image-ricle--xlarge": {
+        "width": 512
+      },
+      "home-image-center": {
+        "width": 1462
+      },
+      "home-image-wide-small": {
+        "width": 536
+      },
+      "home-image-wide-medium": {
+        "width": 1120
+      },
+      "home-image-wide-large": {
+        "width": 2240
+      },
+      "post-image": {
+        "width": 730
+      },
+      "post-image-large": {
+        "width": 1460
+      }
+    }
+  }
+}

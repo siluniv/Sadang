@@ -1,0 +1,67 @@
+{
+  "Skip to content": "Doorgaan naar artikel",
+
+  "Loading": "het laden",
+  "More Posts ↓": "Meer berichten ↓",
+  "All Posts →": "Alle berichten →",
+
+  "Recent Posts": "recente berichten",
+  "Featured Posts": "Aanbevolen berichten",
+  "Page Not Found": "Pagina niet gevonden",
+  "Published with {ghostLink} & {themeLink}": "Gepubliceerd met {ghostLink} & {themeLink}",
+
+  "Share on Twitter": "Delen op Twitter",
+  "Share on Facebook": "Delen op Facebook",
+  "Share on LinkedIn": "Delen op LinkedIn",
+  "Share on Pinterest": "Delen op Pinterest",
+  "Share via Email": "Deel via E-mail",
+  "Copy link": "Kopieer link",
+  "Link copied to clipboard": "Link gekopieerd naar klembord",
+
+  "Archive": "Archief",
+  "Tags": "Tags",
+  "1 min read": "1 minuut lezen",
+  "% min read": "% minuut lezen",
+
+  "Paid": "Betaald",
+  "Members": "leden",
+  "Public": "Openbaar",
+
+  "Account": "Account",
+  "Log in": "Aanmelden",
+  "Log out": "Uitloggen",
+  "Continue": "Doorgaan met",
+  "Subscribe": "abonneren",
+  "Membership": "Lidmaatschap",
+  "Your email address": "jouw e-mailadres",
+  "{siteTitle} Newsletter": "{siteTitle} Nieuwsbrief",
+  "Please check your inbox and click the link to complete the login.": "Controleer uw inbox en klik op de link om het inloggen te voltooien.",
+  "Please check your inbox and click the link to confirm your subscription.": "Controleer je inbox en klik op de link om je abonnement te bevestigen.",
+  "Please enter a valid email address!": "Gelieve een geldig e-mailadres in te geven!",
+  "An error occurred, please try again later.": "Er is een fout opgetreden, probeer het later opnieuw.",
+
+  "Already have an account?": "Heb je al een account?",
+  "Don't have an account yet?": "Heb je nog geen account?",
+
+  "This Content Is for Members": "Deze inhoud is voor leden",
+  "This Content Is for Paid Members": "Deze inhoud is bedoeld voor betaalde leden",
+  "Become a subscriber to access all of our content.": "Word lid van de nieuwsbrief om de laatste updates in uw inbox te ontvangen.",
+
+  "Premium Membership": "Premium lidmaatschap",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content.": "Ontgrendel volledige toegang tot {siteTitle} en bekijk de volledige bibliotheek met alleen voor leden inhoud.",
+  "Subscribe to {siteTitle}": "Aanmelden voor {siteTitle}",
+  "Monthly": "Maandelijks",
+  "Yearly": "Jaarlijks",
+
+  "Log in to {siteTitle}": "Log in op {siteTitle}",
+  "Send login link": "Verzend login link",
+
+  "Your subscription will expire on": "Uw abonnement verloopt op",
+  "Your plan": "Jou plan",
+  "Card": "Kaart",
+  "Expires": "Vervalt",
+  "Next bill date": "Volgende factuurdatum",
+  "Edit billing info": "Factuurgegevens bewerken",
+  "You have an active {siteTitle} account with access to all posts.": "Je hebt een actief {siteTitle} -account met toegang tot alle berichten.",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "Je bent geabonneerd op gratis updates van {siteTitle}, maar je hebt geen betaald abonnement om alle berichten te lezen."
+}

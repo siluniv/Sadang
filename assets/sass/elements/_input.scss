@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  Elements > Inputs
+\*------------------------------------*/
+
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='color'],
+input[type='datetime'],
+input[type='datetime-local'],
+select,
+textarea {
+  width: 100%;
+  display: block;
+  font-size: $type-md;
+  line-height: $type-md-lh;
+  color: var(--color-text-primary);
+  background-color: var(--background-primary);
+  border-radius: $space-4;
+  border: 1px solid var(--color-border);
+  padding: ($space-8 + $space-4) ($space-16 + $space-4);
+
+  &::placeholder {
+    opacity: 1;
+    color: var(--color-text-secondary);
+  }
+}

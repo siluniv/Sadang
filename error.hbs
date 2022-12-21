@@ -1,0 +1,31 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{t 'Page Not Found' }}{{/contentFor}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <div class='c-archive c-archive--no-border'>
+      <h1 class='c-archive__title'>404</h1>
+      <p class='c-archive__description'>{{t 'Page Not Found' }}</p>
+    </div>
+  </div>
+</div>
+
+{{#get 'posts' limit='6'}}
+  {{#if posts}}
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+        <div class='c-title-bar'>
+          <h3 class='c-title-bar__title'>{{t 'Recent Posts' }}</h3>
+          <span class='c-title-bar__divider'></span>
+        </div>
+      </div>
+    </div>
+
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+        {{> loop }}
+      </div>
+    </div>
+  {{/if}}
+{{/get}}

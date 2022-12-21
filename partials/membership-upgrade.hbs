@@ -1,0 +1,25 @@
+{{#has visibility='members'}}
+  <section class='c-subscribe'>
+    <div class='c-subscribe__content'>
+      <h2 class='u-mb-16 u-type-lg'>{{t 'This Content Is for Members' }}</h3>
+      {{> subscribe-form inputLabel='subscribe-box'}}
+    </div>
+    <div class='c-subscribe__icon'>
+      {{> subscribe-box-icon }}
+    </div>
+  </section>
+  <p class='u-type-xs u-type-500'>{{t 'Already have an account?'}} <a href='{{ @site.url }}/signin/' class='u-link'>{{t 'Log in'}}</a></p>
+{{/has}}
+
+{{#has visibility='paid'}}
+  <div class='u-p-32 u-p-40-lg u-bg-gray'>
+    <h2 class='u-type-lg'>{{t 'This Content Is for Paid Members' }}</h2>
+    <p class='u-mt-8'>{{t 'Unlock full access to {siteTitle} and see the entire library of members-only content.' siteTitle=@site.title}}</p>
+  </div>
+
+  {{> membership-plans }}
+
+  {{#unless @member}}
+    <p class='u-type-xs u-type-500'>{{t 'Already have an account?'}} <a href='{{ @site.url }}/signin/' class='u-link'>{{t 'Log in'}}</a></p>
+  {{/unless}}
+{{/has}}

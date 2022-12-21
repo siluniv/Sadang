@@ -1,0 +1,67 @@
+{
+  "Skip to content": "siirry sisältöön",
+
+  "Loading": "Ladataan",
+  "More Posts ↓": "Lisää artikkelit ↓",
+  "All Posts →": "Kaikki viestit →",
+
+  "Recent Posts": "Uusimmat artikkelit",
+  "Featured Posts": "Esitetyt viestit",
+  "Page Not Found": "Sivua ei löydetty",
+  "Published with {ghostLink} & {themeLink}": "Julkaistu {ghostLink} & {themeLink}",
+
+  "Share on Twitter": "Jaa Twitter",
+  "Share on Facebook": "Jaa Facebook",
+  "Share on LinkedIn": "Jaa LinkedIn",
+  "Share on Pinterest": "Jaa Pinterest",
+  "Share via Email": "Jaa sähköpostitse",
+  "Copy link": "Kopioi linkki",
+  "Link copied to clipboard": "Linkki kopioitiin leikepöydälle",
+
+  "Archive": "Arkistoi",
+  "Tags": "Tunnisteet",
+  "1 min read": "1 minuutti lukea",
+  "% min read": "% minuutti lukea",
+
+  "Paid": "Maksettu",
+  "Members": "Jäsenet",
+  "Public": "Julkinen",
+
+  "Account": "Tili",
+  "Log in": "Kirjaudu sisään",
+  "Log out": "Kirjautua ulos",
+  "Continue": "Jatkaa",
+  "Subscribe": "Tilaa",
+  "Membership": "Jäsenyys",
+  "Your email address": "Sähköpostiosoitteesi",
+  "{siteTitle} Newsletter": "{siteTitle} Uutiskirje",
+  "Please check your inbox and click the link to complete the login.": "Tarkista postilaatikkosi ja napsauta linkkiä suorittaaksesi sisäänkirjautumisen.",
+  "Please check your inbox and click the link to confirm your subscription.": "Tarkista postilaatikko ja napsauta linkkiä vahvistaaksesi tilauksesi.",
+  "Please enter a valid email address!": "Ole hyvä ja syötä toimiva sähköpostiosoite!",
+  "An error occurred, please try again later.": "Tapahtui virhe, yritä myöhemmin uudelleen.",
+
+  "Already have an account?": "Onko sinulla jo tili?",
+  "Don't have an account yet?": "Eikö sinulla ole vielä tiliä?",
+
+  "This Content Is for Members": "Tämä sisältö on tarkoitettu jäsenille",
+  "This Content Is for Paid Members": "Tämä sisältö on tarkoitettu maksetuille jäsenille",
+  "Become a subscriber to access all of our content.": "Liity uutiskirjeeseen saadaksesi uusimmat päivitykset postilaatikkoosi.",
+
+  "Premium Membership": "Premium-jäsenyys",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content.": "Avaa täysi pääsy sivustolle {siteTitle} ja näe koko vain jäsenille tarkoitetun sisällön kirjasto.",
+  "Subscribe to {siteTitle}": "Tilaa {siteTitle}",
+  "Monthly": "Kuukausittain",
+  "Yearly": "Vuosittain",
+
+  "Log in to {siteTitle}": "Kirjaudu sisään sivustoon {siteTitle}",
+  "Send login link": "Lähetä kirjautumislinkki",
+
+  "Your subscription will expire on": "Tilauksesi vanhenee",
+  "Your plan": "Suunnitelmasi",
+  "Card": "Kortti",
+  "Expires": "vanhenee",
+  "Next bill date": "Seuraavan laskun päivämäärä",
+  "Edit billing info": "Muokkaa laskutustietoja",
+  "You have an active {siteTitle} account with access to all posts.": "Sinulla on aktiivinen {siteTitle} -tili, jolla on pääsy kaikkiin viesteihin.",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "Olet tilannut ilmaiset päivitykset sivustolta {siteTitle}, mutta sinulla ei ole maksettua tilausta kaikkien viestien lukemiseen."
+}

@@ -1,0 +1,36 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{!-- Show the custom homepage content --}}
+{{#page}}
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+      <div class='c-home-center'>
+        {{#if feature_image}}
+          <div class='c-home-center__media'>
+            <img class='c-home-center__image lazyload' data-src='{{ img_url feature_image size='home-image-center' }}' alt='{{ @site.title }}'>
+          </div>
+        {{/if}}
+
+        <div class='c-home-center__content'>
+          <section class='c-content'>
+            {{ content }}
+
+            {{#unless @member}}
+              {{> subscribe-form inputLabel='subscribe-home-intro'}}
+            {{/unless}}
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/page}}
+
+{{> home/featured-posts }}
+
+{{> home/recent-posts }}
+
+{{> home/all-posts-link }}
+
+{{> subscribe-box }}

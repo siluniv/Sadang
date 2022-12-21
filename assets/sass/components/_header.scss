@@ -1,0 +1,42 @@
+/*------------------------------------*\
+  Components > Header
+\*------------------------------------*/
+
+.c-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  margin-bottom: 60px;
+
+  @include mq($from: desktop) {
+    padding: $space-40 0;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mq($from: desktop) {
+      min-height: $space-40;
+    }
+  }
+}
+
+.home-template {
+  .c-header {
+    margin-bottom: 0;
+  }
+}
+
+.shop-template {
+  .c-header {
+    margin-bottom: 0;
+  }
+}

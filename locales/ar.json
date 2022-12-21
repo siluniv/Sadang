@@ -1,0 +1,67 @@
+{
+  "Skip to content": "تخطى الى المحتوى",
+
+  "Loading": "جار التحميل",
+  "More Posts ↓": "↓ تحميل المزيد",
+  "All Posts →": "→ جميع المشاركات",
+
+  "Recent Posts": "المشاركات الاخيرة",
+  "Featured Posts": "المشاركات المميزة",
+  "Page Not Found": "الصفحة غير موجودة",
+  "Published with {ghostLink} & {themeLink}": "نشرت مع {ghostLink} & {themeLink}",
+
+  "Share on Twitter": "انشر على تويتر",
+  "Share on Facebook": "انشر على الفيسبوك",
+  "Share on LinkedIn": "انشر على لينكد إن",
+  "Share on Pinterest": "انشر على بينترست",
+  "Share via Email": "انشر على الإيميل",
+  "Copy link": "انسخ الرابط",
+  "Link copied to clipboard": "تم نسخ الرابط",
+
+  "Archive": "أرشيف",
+  "Tags": "التصنيفات",
+  "1 min read": "1 دقيقة قراءة",
+  "% min read": "% دقائق قراءة",
+
+  "Paid": "مدفوع",
+  "Members": "للأعضاء",
+  "Public": "عام",
+
+  "Account": "الحساب",
+  "Log in": "تسجيل الدخول",
+  "Log out": "تسجيل الخروج",
+  "Continue": "استمر",
+  "Subscribe": "اشترك",
+  "Membership": "عضوية",
+  "Your email address": "عنوان بريدك الإلكتروني",
+  "{siteTitle} Newsletter": "النشرة الإخبارية",
+  "Please check your inbox and click the link to complete the login.": "يرجى التحقق من صندوق الوارد الخاص بك والنقر فوق الارتباط لإكمال تسجيل الدخول.",
+  "Please check your inbox and click the link to confirm your subscription.": "يرجى التحقق من صندوق الوارد الخاص بك والنقر على الرابط لتأكيد اشتراكك.",
+  "Please enter a valid email address!": "من فضلك أدخل بريد أليكترونى صحيح!",
+  "An error occurred, please try again later.": "لقد حدث خطأ، رجاء أعد المحاولة لاحقا.",
+
+  "Already have an account?": "هل لديك حساب؟",
+  "Don't have an account yet?": "لا تملك حسابا حتى الآن؟",
+
+  "This Content Is for Members": "هذا المحتوى للأعضاء",
+  "This Content Is for Paid Members": "هذا المحتوى مخصص للأعضاء المشتركين",
+  "Become a subscriber to access all of our content.": "انضم إلى النشرة الإخبارية لتلقي آخر التحديثات.",
+
+  "Premium Membership": "عضوية مميزة",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content.": "افتح الوصول الكامل إلى {siteTitle} واطلع على المكتبة الكاملة لمحتوى الأعضاء فقط.",
+  "Subscribe to {siteTitle}": "سجل في {siteTitle}",
+  "Monthly": "شهري",
+  "Yearly": "سنوي",
+
+  "Log in to {siteTitle}": "تسجيل الدخول إلى {siteTitle}",
+  "Send login link": "ارسال رابط تسجيل الدخول",
+
+  "Your subscription will expire on": "سوف تنتهي صلاحية اشتراكك في",
+  "Your plan": "خطتك",
+  "Card": "بطاقة",
+  "Expires": "تنتهي الصلاحية",
+  "Next bill date": "تاريخ الفاتورة التالية",
+  "Edit billing info": "تحرير معلومات الفواتير",
+  "You have an active {siteTitle} account with access to all posts.": "لديك حساب {siteTitle} نشط له حق الوصول إلى جميع المشاركات.",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "أنت مشترك في تحديثات مجانية من {siteTitle} ، ولكن ليس لديك اشتراك مدفوع لقراءة جميع المشاركات."
+}

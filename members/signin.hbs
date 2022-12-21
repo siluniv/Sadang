@@ -1,0 +1,13 @@
+{{!< ../default}}
+
+{{#contentFor 'title'}}{{t 'Log in to {siteTitle}' siteTitle=@site.title}}{{/contentFor}}
+
+<div class='o-wrapper'>
+  {{#if @member}}
+    {{!-- Logged in: Redirect home --}}
+    <script>window.location = '{{@site.url}}';</script>
+  {{else}}
+    {{!-- Not logged in: Signin form --}}
+    {{bluedot_signin}}
+  {{/if}}
+</div>

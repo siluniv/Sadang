@@ -1,0 +1,17 @@
+{{!-- Show the subscribe box if the visitor is not currently a member --}}
+{{#unless @member}}
+  <div class='{{#is 'home'}} o-grid {{/is}} is-membership'>
+    <div class='{{#is 'home'}} o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l {{/is}}'>
+      <section class='c-subscribe'>
+        <div class='c-subscribe__content'>
+          <h3 class='c-subscribe__heading u-type-500 u-mb-8'>{{t '{siteTitle} Newsletter' siteTitle=@site.title}}</h3>
+          <p class='u-mb-16'>{{t 'Become a subscriber to access all of our content.' }}</p>
+          {{> subscribe-form inputLabel='subscribe-box'}}
+        </div>
+        <div class='c-subscribe__icon'>
+          {{> subscribe-box-icon }}
+        </div>
+      </section>
+    </div>
+  </div>
+{{/unless}}

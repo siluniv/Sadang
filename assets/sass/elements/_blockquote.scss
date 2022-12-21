@@ -1,0 +1,8 @@
+/*------------------------------------*\
+  Elements > Blockquote
+\*------------------------------------*/
+
+blockquote {
+  padding-left: $space-24;
+  border-left: $space-4 solid var(--color-text-primary);
+}
