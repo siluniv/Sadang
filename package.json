@@ -57,12 +57,6 @@
         "title": "뉴스레터 폼 제목",
         "default": "뉴스레터"
       },
-      "newsletter_form_description" : {
-        "group": "newsletter_form",
-        "type": "text",
-        "title": "뉴스레터 폼 설명",
-        "default": "지금 뉴스레터를 구독하세요."
-      },
       "newsletter_form_button_text" : {
         "group": "newsletter_form",
         "type": "text",
