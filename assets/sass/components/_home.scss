@@ -278,3 +278,113 @@
     }
   }
 }
+
+/**
+ * ====================
+ * Shop Carousel
+ * ====================
+ */
+
+.c-home-shop-swiper {
+  overflow: hidden;
+
+  .c-shop-navigation__outer {
+    padding: 20px 0 32px 0;
+    margin: 0;
+
+    @include mq($from: desktop) {
+      padding-bottom: 0;
+      margin-bottom: -24px;
+    }
+  }
+}
+
+.c-home-shop {
+  padding: 20px 0;
+
+  @include mq($from: desktop) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-family: 'Anton', sans-serif;
+  }
+}
+
+.c-shop-swiper {
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    height: auto;
+    visibility: hidden;
+
+    > div {
+      height: 100%;
+    }
+  }
+
+  .swiper-slide-visible {
+    visibility: visible;
+  }
+
+  .swiper-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 26px;
+    padding: 12px 0;
+
+    @include mq($until: desktop) {
+      display: none;
+    }
+
+    .swiper-button {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .swiper-button-disabled {
+      opacity: 0.3;
+    }
+  }
+
+  .swiper-pagination {
+    padding: 36px 0;
+  }
+
+  .swiper-pagination-bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+
+    @include mq($from: desktop) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    border-radius: 100%;
+    width: 6px;
+    height: 6px;
+    background-color: #b9b9b9;
+    display: block;
+    cursor: pointer;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #717171;
+  }
+}

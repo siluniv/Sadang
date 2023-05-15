@@ -3,9 +3,16 @@ routes:
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
+
+  # Route for Shop
+  /shop/online-class/: routes/shop/online-class
+  /shop/webinar/: routes/shop/webinar
+  /shop/digital-book/: routes/shop/digital-book
+  /shop/etc/: routes/shop/etc
+
   /blog/:
     controller: channel
-    template: blog
+    template: index
     filter: tag:-home
 
 collections:

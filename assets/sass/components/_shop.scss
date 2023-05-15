@@ -138,6 +138,8 @@
   }
 }
 
+
+
 [data-user-color-scheme="dark"] {
   .c-shop {
 
@@ -166,6 +168,377 @@
     &-more {
       color: #000;
       background-color: #fff;
+    }
+  }
+}
+
+
+
+.c-shop {
+  &-section {
+    background-color: #fff;
+    padding-bottom: 60px;
+  }
+
+  &__product-list {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  .c-shop-section {
+    background-color: #333;
+  }
+}
+
+/**
+ * ==============================
+ * Shop Route - Featured Slide
+ * ==============================
+ */
+.c-shop-slide {
+  padding: 20px 0;
+  background-color: #efefef;
+  overflow: hidden;
+
+  @include mq($from: desktop) {
+    padding: 34px 0;
+  }
+}
+
+.c-featured-product-slide__outer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 40px;
+
+  @include mq($from: desktop) {
+    column-gap: 80px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    cursor: pointer;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 16px;
+  }
+
+  .swiper-pagination-bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+
+    @include mq($from: landscape) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    border-radius: 100%;
+    width: 6px;
+    height: 6px;
+    background-color: #b9b9b9;
+    display: block;
+    cursor: pointer;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #717171;
+  }
+
+  .swiper-slide {
+    height: auto;
+
+    > div {
+      height: 100%;
+    }
+  }
+}
+
+.c-featured-product-slide {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @include mq($from: landscape) {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 40px;
+
+    align-items: center;
+  }
+
+  @include mq($from: desktop) {
+    column-gap: 80px;
+  }
+
+  &__swiper-button {
+    display: none;
+    z-index: 10;
+
+    @include mq($from: landscape) {
+      display: block;
+    }
+
+    &--item {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: #000;
+      border-radius: 100%;
+
+      opacity: 0.2;
+      cursor: not-allowed;
+
+      &:not(.swiper-button-disabled) {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      svg {
+        display: block;
+        width: 22px;
+        height: 24px;
+        color: #fff;
+      }
+    }
+
+    .swiper-button-prev svg {
+      margin-right: 2px;
+    }
+
+    .swiper-button-next svg {
+      margin-left: 2px;
+    }
+  }
+
+  &__media {
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #000;
+
+    @include mq($from: landscape) {
+      width: 320px;
+      flex-shrink: 0;
+    }
+
+    @include mq($from: desktop) {
+      width: 400px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__main {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include mq($from: landscape) {
+      padding-top: 0px;
+    }
+  }
+
+  &__tag {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--accent-color);
+  }
+
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    flex-grow: 1;
+
+    @include ellipsis(2);
+  }
+
+  &__excerpt {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+
+    @include ellipsis(3);
+  }
+
+  &__action {
+    margin-top: 20px;
+
+    @include mq($from: landscape) {
+      margin-top: 12px;
+    }
+
+    @include mq($from: desktop) {
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    border-radius: 100rem;
+    height: 36px;
+    min-width: 130px;
+    width: fit-content;
+    background-color: #000;
+    color: #fff;
+    transition: all 0.3s ease;
+
+    @include attention() {
+      background-color: #717171;
+    }
+
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  .c-shop-slide {
+    background-color: #4a4a4a;
+  }
+
+  .c-featured-product-slide {
+    &__title,
+    &__excerpt {
+      color: #fff;
+    }
+  }
+}
+
+/**
+ * ==============================
+ * Shop Route - Shop Navigation
+ * ==============================
+ */
+ .c-shop-navigation__outer {
+  padding-top: 40px;
+  margin-bottom: 46px;
+
+  .c-nav {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 0;
+
+    &__item {
+      margin: 0;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      height: 40px;
+      min-width: 96px;
+      padding: 0 16px;
+      border-radius: 100rem;
+      border: 1px solid #d9d9d9;
+      color: #d9d9d9;
+
+      @include mq($from: desktop) {
+        height: 50px;
+        min-width: 116px;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &--current {
+        color: #000;
+        border-color: #000;
+      }
+
+      @include attention() {
+        color: #000;
+        border-color: #000;
+      }
+    }
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  .c-shop-navigation__outer {
+    .c-nav {
+      &__link {
+        &--current {
+          color: #000;
+          border-color: #fff;
+          background-color: #fff;
+        }
+
+        @include attention() {
+          color: #000;
+          border-color: #fff;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * ====================
+ * Shop Page
+ * ====================
+ */
+.c-shop-page {
+  &__hero {
+    background-color: #efefef;
+  }
+
+  &__main {
+    background-color: #fff;
+    padding-bottom: 60px;
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  .c-shop-page {
+    &__hero {
+      background-color: #4a4a4a;
+    }
+
+    &__main {
+      background-color: #333;
     }
   }
 }

@@ -39,3 +39,56 @@
     }
   }
 }
+
+
+
+.c-archive {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include mq($from: landscape) {
+      row-gap: 60px;
+    }
+
+    @include mq($from: desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 60px;
+
+    &__load-more {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 300px;
+      height: 60px;
+
+      font-weight: 700;
+      font-size: 14px;
+      color: #999;
+      border: 1px solid #999999;
+      border-radius: 100rem;
+
+      &--active {
+        @include attention() {
+          background-color: #e5e5e5;
+        }
+      }
+
+      &--disable {
+        cursor: not-allowed;
+        opacity: 0.4;
+      }
+    }
+  }
+}
