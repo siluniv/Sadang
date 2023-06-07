@@ -45,11 +45,16 @@
 
 
 // For Product style
-@import 'product-card';
+@import 'product';
+
+// For Product Card style
 @import 'product-grid';
+@import 'product-card';
+
+// For Product Slide style
+@import 'product-slide';
 @import 'product-navigation';
 @import 'product-pagination';
-@import 'product-slide';
 
 @import 'shop-slide';
 

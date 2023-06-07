@@ -12,3 +12,10 @@
     // grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.c-product-grid__related {
+  @include mq($from: desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+  }
+}

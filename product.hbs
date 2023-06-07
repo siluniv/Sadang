@@ -1,9 +1,701 @@
 {{!< default}}
 
-{{#contentFor 'body_custom_class'}} shop-template{{/contentFor}}
+{{#contentFor "custom_body_class"}} shop-template{{/contentFor}}
 
-<div class='o-grid'>
-  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--3-4-l'>
-      {{bluedot_product}}
+{{#product}}
+<div class="c-product">
+  {{#if payment_status.is_paid}}
+    {{#if payment.is_online_class}}
+  <div class="c-product__header">
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--full c-vod">
+
+
+        {{#if payment.purchase.chapters}}
+                <div class="bluedot-product-chapters">
+                    <div class="bluedot-product-chapter-main">
+                        <div class="bluedot-product-chapter-main-content">
+                            <video-js id="video-for-chapter" class="vjs-default-skin vjs-big-play-centered" controls preload="auto"></video-js>
+                        </div>
+                    </div>
+                    <div class="bluedot-product-chapter-sidebar">
+                        <div class="bluedot-product-chapter-sidebar-content">
+                            {{#foreach payment.purchase.chapters as |chapter|}}
+                            <div class="bluedot-product-chapter-header">
+                                <h3>{{chapter.title}}</h3>
+                                <span>{{chapter.lessons.length}}개 수업</span>
+                            </div>
+
+                            <div class="bluedot-product-chapter-list chapter-index-{{chapter.index}}">
+                                <ul>
+                                {{#foreach lessons as |lesson|}}
+                                    <li class="lesson-index-{{lesson.index}} no-have-cover">
+                                        <a href="#" class="lesson-link" data-video-uuid="{{lesson.media_uuid}}" data-video="{{lesson.url}}" data-video-view-current="{{lesson.media_info.view_current}}" data-video-view-percent="{{lesson.media_info.view_percent}}">
+                                            <span class="no">{{lesson.index}}</span>
+                                            <span class="title"><span>{{lesson.title}}</span></span>
+
+                                            {{#if lesson.media_info}}
+                                            <span class="progress"><span class="now" style="width:{{lesson.media_info.view_percent}}%"></span></span>
+                                            {{/if}}
+                                        </a>
+                                    </li>
+                                {{/foreach}}
+                                </ul>
+                            </div>
+                            {{/foreach}}
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+
+            <script>
+        function updateMediaView(uuid, current, duration) {
+            $.ajax({
+                url: '/members/api/media/view',
+                method: 'PUT',
+                data: JSON.stringify({
+                uuid: uuid,
+                current: current,
+                duration: duration
+                }),
+                contentType:"application/json; charset=utf-8"
+            })
+        }
+
+        function chnagePlayProgress(uuid, current, percent) {
+            var $playarea = $("[data-video-uuid=" + uuid+"]");
+            var $playarea_progress = $playarea.find('.progress');
+
+            $playarea.data('video-view-current', current);
+            $playarea.data('video-view-percent', percent);
+            $playarea_progress.find('.now').css('width', percent + '%');
+        }
+
+        window.onload = function() {
+            var $script_for = $(".bluedot-product-chapters");
+            var player_loading = false;
+            var media_last = null;
+            var media_uuid = null;
+            var player = videojs('video-for-chapter');
+            $chapter_list = $script_for.find(".bluedot-product-chapter-list");
+
+            function selectVideo($lesson, autoPlay) {
+                media_last = null;
+                autoPlay = typeof(autoPlay) === 'undefined' ? false : autoPlay;
+
+                $chapter_list.find('a.active').removeClass('active');
+                $lesson.addClass('active');
+
+                media_uuid = $lesson.data('video-uuid');
+
+                var video_view_current = $lesson.data('video-view-current');
+                var video = $lesson.data('video');
+
+                if(video) {
+                    player_loading = true;
+                    player.src({src: video});
+
+                    if(video_view_current) {
+                        player.currentTime(video_view_current);
+                    }
+
+                    if(autoPlay) {
+                        player.ready(function() {
+                            player.play();
+                        });
+                    }
+                }
+            }
+
+            $chapter_list.find(".lesson-link").on('click', function() {
+                var $lesson = $(this);
+                selectVideo($lesson, true);
+                return false;
+            })
+
+            if(player) {
+                if(player.el_) {
+                    $(player.el_).on('contextmenu', function() {
+                        return false;
+                    });
+                }
+
+                player.on('playing', function() {
+                    player_loading = false;
+                })
+
+                player.on('timeupdate', function() {
+                    if(!player_loading && media_uuid) {
+                        if(this.ended()) {
+                            updateMediaView(media_uuid, this.duration(), this.duration());
+                            chnagePlayProgress(media_uuid, this.duration(), 100);
+                        } else {
+                            var now = parseInt(this.currentTime());
+                            var percent = Math.round((now / this.duration()) * 100);
+                            chnagePlayProgress(media_uuid, now, percent);
+
+                            if(media_last != now && now % 2 === 0) { // 2초에 한번씩
+                                updateMediaView(media_uuid, now, this.duration());
+                                media_last = now;
+                            }
+                        }
+                    }
+                })
+            }
+
+            // 첫번째 동영상 자동 선택
+            var $first_lesson = $script_for.find('.chapter-index-1 .lesson-index-1 .lesson-link');
+            selectVideo($first_lesson, false);
+        }
+    </script>
+
+
+      </div>
+    </div>
+  </div>
+    {{else}}
+    {{#if feature_image}}
+  <div class="c-product__header">
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--full">
+        <div class="c-product__media--container">
+          <img
+            alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+            class="c-product__image--cover"
+            src="{{img_url feature_image}}"
+            >
+          <div class="c-product__media">
+            <img
+              alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+              class="c-product__image"
+              src="{{img_url feature_image}}"
+              >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+    {{/if}}
+  {{else}}
+  {{#if feature_image}}
+  <div class="c-product__header">
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--full">
+        <div class="c-product__media--container">
+          <img
+            alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+            class="c-product__image--cover"
+            src="{{img_url feature_image}}"
+            >
+          <div class="c-product__media">
+            <img
+              alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+              class="c-product__image"
+              src="{{img_url feature_image}}"
+              >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{/if}}
+
+  <div class="c-product__main">
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--full">
+        <div class="c-product__main--inner">
+
+          <div class="c-product-sell">
+            <div class="c-product-sell__container">
+              <div class="c-product-sell__header">
+                {{#if payment.type}}
+                <div class="c-product-sell__type">{{payment.type_text}}</div>
+                {{/if}}
+                {{!-- {{#primary_tag}}
+                <div class="c-product-sell__tag">{{name}}</div>
+                {{/primary_tag}} --}}
+                <h3 class="c-product-sell__title">{{title}}</h3>
+              </div>
+
+
+              {{!-- 상품 정보 --}}
+              <div class="c-product-sell__data">
+              {{#if payment.is_webinar}}
+                <div class="c-product-sell__event">
+                  {{#if payment.event.type}}
+                  <dl>
+                    <dt>행사유형</dt>
+                    <dd>{{payment.event.type_text}}</dd>
+                  </dl>
+                  {{/if}}
+
+                  {{#if payment.event.used_event_date}}
+                  <dl>
+                      <dt>행사일정</dt>
+                      <dd>
+                          {{payment.event.event_date_text}}
+                          {{#unless payment.event.event_is_past}}
+                          <span class="label-dday">D - {{payment.event.event_d_day}}</span>
+                          {{/unless}}
+                      </dd>
+                  </dl>
+                  {{/if}}
+                  {{#if payment.event.used_join_date}}
+                  <dl>
+                      <dt>신청기간</dt>
+                      <dd>{{payment.event.join_date_text}}</dd>
+                  </dl>
+                  {{/if}}
+                  {{#if payment.used_period_days}}
+                  <dl>
+                      <dt>{{payment.period_days_title}}</dt>
+                      <dd>{{payment.period_days}}일 (오늘 구매시 {{payment.period_date_from_now}}까지 이용가능)</dd>
+                  </dl>
+                  {{/if}}
+
+                  {{#if payment.event.place}}
+                  <dl>
+                      <dt>장소</dt>
+                      <dd class="c-product-sell__event--place">
+                        <span>{{payment.event.place}}</span>
+                        {{#if payment_status.is_paid}}
+                        {{#if payment.event.online_stream_url}}
+                          <a class="c-product-sell__event--link" href="{{payment.event.online_stream_url}}" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                              <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+                            </svg>
+                            <span>참여하기</span>
+                          </a>
+                        {{/if}}
+                        {{/if}}
+                      </dd>
+                  </dl>
+                  {{/if}}
+                </div>
+              {{else}}
+                {{#unless payment_status.is_paid}}
+                  {{#if payment.used_period_days}}
+                <div class="c-product-sell__event">
+                  <dl>
+                    <dt class="c-product-sell__event--download">{{payment.period_days_title}}</dt>
+                    <dd>
+                        {{payment.period_days}}일
+                        (오늘 구매시 {{payment.period_date_from_now}}까지 이용가능)
+                    </dd>
+                  </dl>
+                </div>
+                  {{/if}}
+                {{else}}
+                  {{#if payment_period.is_period}}
+                <div class="c-product-sell__event">
+                  <dl>
+                    <dt class="c-product-sell__event--period">{{payment.period_days_title}}</dt>
+                    <dd>
+                      {{#if payment_period.period_is_today}}
+                      오늘 {{payment_period.period_time_at}} 까지 이용가능
+                      {{else}}
+                      {{payment_period.period_at}}까지 이용가능 (구매 후 {{payment.period_days}}일)
+                      {{/if}}
+                    </dd>
+                  </dl>
+                </div>
+                  {{/if}}
+                {{/unless}}
+              {{/if}}
+              </div>
+
+              {{!-- 구매 관련 추가 정보 --}}
+              {{#if payment_status.is_paid}}
+              <div class="c-product-sell__paid bluedot-product-info-for-paid{{#if payment.purchase.file}}{{#unless (eq payment.purchase.file.vimeo_state "done")}} have-file{{else}} have-not-file{{/unless}}{{else}} have-not-file{{/if}}{{#if payment.purchase.message}} have-message{{else}} have-not-message{{/if}}">
+              {{!-- 파일 업로드 된 것이 있다면 .. --}}
+              {{#if payment.purchase.file}}
+                {{#if payment.purchase.file.is_mp4}}
+                <div class="c-product-sell__video-message bluedot-product-video-message">
+                  {{#match payment.purchase.file.vimeo_state "=" "renew"}}
+                  동영상을 새롭게 업로드 중입니다.
+                  {{else match payment.purchase.file.vimeo_state "=" "done"}}
+                    {{#if payment.purchase.file.vimeo_files}}
+                      {{#if payment.purchase.file.vimeo_files.hls}}
+                      {{else}}
+                  동영상을 컨버팅 중입니다.
+                  <br />완료되는대로 재생하실 수 있도록 하겠습니다.
+                      {{/if}}
+                    {{else}}
+                  동영상을 컨버팅 중입니다.
+                    {{/if}}
+                  {{else}}
+                  동영상을 업로드 중입니다.
+                  {{/match}}
+                  {{#unless (eq payment.purchase.file.vimeo_state "done")}}
+                  <br />완료되는대로 재생하실 수 있도록 하겠습니다.
+                  {{/unless}}
+                </div>
+                {{else}}
+
+                {{/if}}
+              {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if payment_status.is_paid}}
+              {{#if payment.purchase.message}}
+              <div class="c-product-sell__buyer-message bluedot-product-buyer-message bluedot-markdown">
+                {{markdown payment.purchase.message}}
+              </div>
+              {{/if}}
+              {{/if}}
+
+              {{#unless payment_status.is_paid}}
+              {{!-- 가격 정보 --}}
+              <div class="c-product-sell__prices">
+              {{#if payment.have_price_sale}}
+                <div class="c-product-sell__price">
+                  <div class="c-product-sell__price--label">무료회원 {{#if payment.have_price_original}}할인가{{else}}판매가{{/if}}</div>
+                  <div class="c-product-sell__price--value">
+                    {{#if @member.paid}}
+                    <i>{{price payment.price currency="KRW"}}</i>
+                    {{else}}
+                    {{price payment.price currency="KRW"}}
+                    {{/if}}
+                  </div>
+                </div>
+
+                <div class="c-product-sell__price bluedot-product-price-for-subscriber">
+                  <div class="c-product-sell__price--label">유료구독회원 할인가</div>
+                  <div class="c-product-sell__price--value">{{price payment.price_sale currency="KRW"}}</div>
+                </div>
+
+                <div class="c-product-sell__price c-product-sell__price--final bluedot-product-final-price">
+                  <div class="c-product-sell__price--label">결제금액</div>
+                  <div class="c-product-sell__price--value">
+                  {{#if @member.paid}}
+                    {{price payment.price_sale currency="KRW"}}
+                  {{else}}
+                    {{price payment.price currency="KRW"}}
+                  {{/if}}
+                  </div>
+                </div>
+              {{else}}
+                {{#unless payment.is_stop_selling}}
+                  {{#if payment.have_price_original}}
+                <div class="c-product-sell__price">
+                  <div class="c-product-sell__price--label">판매가</div>
+                  <div class="c-product-sell__price--value">
+                    <i>{{price payment.price_original currency="KRW"}}</i>
+                  </div>
+                </div>
+                <div class="c-product-sell__price">
+                  <div class="c-product-sell__price--label">무료회원 할인가</div>
+                  <div class="c-product-sell__price--value">
+                    <span class="c-product-sell__price--percent">{{payment.price_original_sale_percent}}<span class="symbol">%</span></span>
+                    {{price payment.price currency="KRW"}}
+                  </div>
+                </div>
+                <div class="c-product-sell__price c-product-sell__price--final bluedot-product-final-price">
+                  <div class="c-product-sell__price--label">결제금액</div>
+                  <div class="c-product-sell__price--value">{{price payment.price currency="KRW"}}</div>
+                </div>
+                  {{else}}
+                <div class="c-product-sell__price">
+                  <div class="c-product-sell__price--label">판매가</div>
+                  <div class="c-product-sell__price--value">{{price payment.price currency="KRW"}}</div>
+                </div>
+                  {{/if}}
+                {{/unless}}
+              {{/if}}
+              </div>
+              {{/unless}}
+
+              <div class="c-product-sell__payment">
+              {{#if payment_status.is_paid}}
+                {{#if payment.type}}
+                  {{#if payment.purchase.url}}
+                    {{#if payment.purchase.url_is_text}}
+                      {{!-- URL 부분에 URL 입력하지 않고 일반 텍스트로 입력함 --}}
+                <div class="bluedot-product-buyer-message bluedot-markdown">{{markdown payment.purchase.url}}</div>
+                    {{else}}
+                <a class="c-product-sell__payment--button" href="{{payment.purchase.url}}">{{payment.purchase.button_text}}</a>
+                    {{/if}}
+                  {{else}}
+
+                    {{#if payment.purchase.file}}
+                      {{#if payment.purchase.file.is_mp4}}
+                <div class="c-product-sell__payment--button disabled">구매완료</div>
+                      {{else}}
+                        {{#if payment.purchase.file.name}}
+                          {{#if payment.purchase.file.downloadable}}
+                <a class="c-product-sell__payment--button c-product-sell__download--button" {{#if payment.purchase.file.is_pdf}}href="/file/{{uuid}}"{{else}}href="#" onclick="downloadURI('/file/{{uuid}}', '{{payment.purchase.file.name}}'); return false;"{{/if}}>{{payment.purchase.file.ext}} 다운로드</a>
+                          {{else}}
+                <a class="c-product-sell__payment--button" href="/file/{{uuid}}">첨부파일 보기</a>
+                          {{/if}}
+                        {{else}}
+                <div class="c-product-sell__payment--button disabled">구매완료</div>
+                        {{/if}}
+                      {{/if}}
+                    {{else}}
+                <div class="c-product-sell__payment--button disabled">구매완료</div>
+                    {{/if}}
+
+                  {{/if}}
+                {{else}}
+
+                  {{#if payment.purchase.file}}
+                    {{#if payment.purchase.file.is_mp4}}
+                <div class="c-product-sell__payment--button disabled">구매완료</div>
+                    {{else}}
+                      {{#if payment.purchase.file.name}}
+                        {{#if payment.purchase.file.downloadable}}
+                <a class="c-product-sell__payment--button c-product-sell__download--button" {{#if payment.purchase.file.is_pdf}}href="/file/{{uuid}}"{{else}}href="#" onclick="downloadURI('/file/{{uuid}}', '{{payment.purchase.file.name}}'); return false;"{{/if}}>{{payment.purchase.file.ext}} 다운로드</a>
+                        {{else}}
+                <a class="c-product-sell__payment--button" href="/file/{{uuid}}">첨부파일 보기</a>
+                        {{/if}}
+                      {{else}}
+                <div class="c-product-sell__payment--button disabled">구매완료</div>
+                      {{/if}}
+                    {{/if}}
+                  {{else}}
+                <div class="c-product-sell__payment--button disabled">구매완료</div>
+                  {{/if}}
+
+                {{/if}}
+              {{else}}
+                {{#if payment.is_selling}}
+                <a class="c-product-sell__payment--button" href="#" data-portal="product" data-product-uuid="{{ uuid }}">
+                {{#if (eq payment.type "webinar")}}
+                  {{#if payment.price_final}}결제하기{{else}}등록하기{{/if}}
+                {{else}}
+                  결제하기
+                {{/if}}
+                </a>
+                {{else}}
+                <div class="c-product-sell__payment--button disabled">{{#if payment.is_stop_selling}}판매 종료{{else}}{{#if payment.is_soldout}}품절{{/if}}{{/if}}</div>
+                {{/if}}
+              {{/if}}
+              </div>
+            </div>
+          </div>
+
+          <div class="c-product-content">
+            <div class="c-product-content__header">
+              {{#if payment.type}}
+              <div class="c-product-content__type">{{payment.type_text}}</div>
+              {{/if}}
+              <h3 class="c-product-content__title">{{title}}</h3>
+            </div>
+
+            <div class="c-product-content__info">
+              {{#if payment.have_require_message}}
+              <div class="c-product-sell__require-message bluedot-product-require-message bluedot-markdown">
+                  {{markdown payment.require_message}}
+              </div>
+              {{/if}}
+
+
+                {{#if payment_status.is_paid}}
+                    {{#unless payment.purchase.chapters}}
+                        {{#if payment.purchase.file}}
+                            {{#if payment.purchase.file.is_mp4}}
+                                {{#if (eq payment.purchase.file.vimeo_state "done")}}
+                                    {{#if payment.purchase.file.vimeo_files}}
+                                        {{#if payment.purchase.file.vimeo_files.hls}}
+              <div class="c-product-content__video">
+                                            <div class="bluedot-product-video-wrap">
+                                                <video-js id="video" class="vjs-default-skin vjs-big-play-centered" controls preload="auto" width="640" height="268">
+                                                    <source src="{{payment.purchase.file.vimeo_files.hls.link}}" type="application/x-mpegURL">
+                                                </video-js>
+                                                <script>
+                                                    var player = videojs('video');
+                                                </script>
+                                            </div>
+              </div>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/unless}}
+                {{/if}}
+            </div>
+
+            <div class="c-product-content__content">
+              <div class="c-content">{{content}}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="c-product__footer">
+  <div class="o-grid">
+    <div class="o-grid__col o-grid__col--full">
+      <div class="c-product__go-shop">
+        <a href="/shop/" class="c-product__go-shop--button">전체 상품 보기</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-product-related__section">
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--full">
+      {{#get "products" filter=(concat "primary_tag:" primary_tag.slug) include="tags" limit="4" order="published_at desc"}}
+      {{#if products}}
+      <div class="c-product-related__title">당신이 관심 가질 상품들</div>
+      <div class="c-product-grid c-product-grid__related">
+      {{#foreach products}}
+        {{> product/card}}
+      {{/foreach}}
+      </div>
+      {{/if}}
+      {{/get}}
+      </div>
+    </div>
   </div>
 </div>
+
+
+{{!-- script and styles for vod content --}}
+{{#if payment_status.is_paid}}
+  {{#if payment.is_online_class}}
+    {{#contentFor 'styles'}}
+<link rel="stylesheet" href="{{asset "public/video.css" hasMinFile="true"}}"/>
+<script type="text/javascript" src="{{asset "public/video.js" hasMinFile="true"}}"></script>
+    {{/contentFor}}
+
+    {{#contentFor 'scripts'}}
+<script type="text/javascript">
+function updateMediaView(uuid, current, duration) {
+  $.ajax({
+    url: '/members/api/media/view',
+    method: 'PUT',
+    data: JSON.stringify({
+      uuid: uuid,
+      current: current,
+      duration: duration
+    }),
+    contentType:"application/json; charset=utf-8"
+  })
+}
+
+function chnagePlayProgress(uuid, current, percent) {
+  var $playarea = $("[data-video-uuid=" + uuid+"]");
+  var $playarea_progress = $playarea.find('.progress');
+
+  $playarea.data('video-view-current', current);
+  $playarea.data('video-view-percent', percent);
+  $playarea_progress.find('.now').css('width', percent + '%');
+}
+
+window.onload = function() {
+  var $script_for = $(".bluedot-product-chapters");
+  var player_loading = false;
+  var media_last = null;
+  var media_uuid = null;
+  var player = videojs('video-for-chapter');
+  $chapter_list = $script_for.find(".bluedot-product-chapter-list");
+
+  function selectVideo($lesson, autoPlay) {
+    media_last = null;
+    autoPlay = typeof(autoPlay) === 'undefined' ? false : autoPlay;
+
+    $chapter_list.find('a.active').removeClass('active');
+    $lesson.addClass('active');
+
+    media_uuid = $lesson.data('video-uuid');
+
+    var video_view_current = $lesson.data('video-view-current');
+    var video = $lesson.data('video');
+
+    if(video) {
+      player_loading = true;
+      player.src({src: video});
+
+      if(video_view_current) {
+        player.currentTime(video_view_current);
+      }
+
+      if(autoPlay) {
+        player.ready(function() {
+            player.play();
+        });
+      }
+    }
+  }
+
+  $chapter_list.find(".lesson-link").on('click', function() {
+    var $lesson = $(this);
+    selectVideo($lesson, true);
+    return false;
+  })
+
+  if(player) {
+    if(player.el_) {
+      $(player.el_).on('contextmenu', function() {
+        return false;
+      });
+    }
+
+    player.on('playing', function() {
+      player_loading = false;
+    })
+
+    player.on('timeupdate', function() {
+      if(!player_loading && media_uuid) {
+        if(this.ended()) {
+          updateMediaView(media_uuid, this.duration(), this.duration());
+          chnagePlayProgress(media_uuid, this.duration(), 100);
+        } else {
+          var now = parseInt(this.currentTime());
+          var percent = Math.round((now / this.duration()) * 100);
+          chnagePlayProgress(media_uuid, now, percent);
+
+          if(media_last != now && now % 2 === 0) { // 2초에 한번씩
+            updateMediaView(media_uuid, now, this.duration());
+            media_last = now;
+          }
+        }
+      }
+    })
+  }
+
+  // 첫번째 동영상 자동 선택
+  var $first_lesson = $script_for.find('.chapter-index-1 .lesson-index-1 .lesson-link');
+  selectVideo($first_lesson, false);
+
+
+
+
+  $(".bluedot-product-chapter-header").on('click',function(){
+    $(this).toggleClass('close');
+    var index = $(this).data('index');
+
+    var target = $('.chapter-index-' + index);
+    if (target) {
+      target.slideToggle(100);
+    }
+  });
+}
+</script>
+    {{/contentFor}}
+  {{/if}}
+{{/if}}
+
+{{/product}}
+
+{{#contentFor "scripts"}}
+<script>
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.setAttribute('download', name);
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+</script>
+{{/contentFor}}
