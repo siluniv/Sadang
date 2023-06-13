@@ -149,3 +149,32 @@ $(document).ready(function() {
     $("#"+tab_id).addClass('current');
   })
 });
+
+/**
+ * Products Carousel
+ */
+const productsCarousel = document.querySelectorAll('.s-products-carousel__container');
+productsCarousel.forEach(el => {
+  const swiper = new Swiper(el.querySelector('.swiper'), {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    breakpoints: {
+      640: {
+        spaceBetween: 40
+      },
+      1024: {
+        spaceBetween: 20,
+        slidesPerView: 4,
+      },
+    },
+    pagination: {
+      el: el.querySelector('.swiper-pagination'),
+      clickable: true,
+    },
+    navigation: {
+      nextEl: el.querySelector('.swiper-button-next'),
+      prevEl: el.querySelector('.swiper-button-prev'),
+    },
+    watchSlidesProgress: true,
+  })
+});
