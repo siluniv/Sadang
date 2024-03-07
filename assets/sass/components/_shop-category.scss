@@ -33,12 +33,6 @@
       border-radius: 100rem;
       background-color: #ebebeb;
       color: #777;
-
-      &.active,
-      &:hover {
-        background-color: var(--shop-accent-background-color);
-        color: var(--shop-accent-color);
-      }
     }
   }
 

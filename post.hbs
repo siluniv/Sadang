@@ -54,3 +54,21 @@
 
 {{/post}}
 
+<div class="o-grid">
+  {{#if @site.visible_related_post}}
+    {{> related-posts}}
+  {{/if}}
+  </div>
+  <div class="o-grid">
+    {{#if @site.post_visible_shop_section}}
+  <section class="c-home-shop-section">
+    <div class="c-home-products-carousel">
+      <div class="o-grid">
+        <div class="o-grid__col o-grid__col--full">
+          {{> common/products/carousel-section which="home" nav="true" title=@site.shop_section_title }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{/if}}
+  </div>

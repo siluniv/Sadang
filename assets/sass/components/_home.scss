@@ -125,14 +125,22 @@
     text-align: center;
     margin-bottom: 16px;
   }
-
+  &__content-secondary {
+    text-align: center;
+    padding: 0 34px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 500px;
+  }
+  
   &__content {
-
     text-align: center;
     padding: 0 16px;
     margin-bottom: 20px;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 600;
     max-width: 500px;
 
     @include mq($from: desktop) {
@@ -140,7 +148,6 @@
     }
 
     &--wrap {
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -204,6 +211,9 @@
 
   &--container {
     padding: 53px 0;
+    background-color: var(--body-background);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
 
   &--content {

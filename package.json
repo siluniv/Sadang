@@ -1,7 +1,7 @@
 {
   "name": "sadang",
   "description": "블루닷 사당(Sadang) 테마",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "ghost": ">=4.0.0"
   },
@@ -49,6 +49,13 @@
   },
   "config": {
     "custom": {
+      "brand_site_description_secondary": {
+        "group": "brand",
+        "type": "text",
+        "default": "",
+        "title": "사이트 부가 정보",
+        "description": "사이트 상단에 노출될 부가 정보를 작성할 수 있습니다."
+      },
       "shop_navigation_format": {
         "group": "shop",
         "type": "select",
@@ -59,47 +66,6 @@
         "default": "type",
         "title": "숍 네비게이션 선택",
         "description": "타입(type) 또는 카테고리(category) 형식의 네비게이션을 선택할 수 있습니다."
-      },
-      "newsletter_form_title" : {
-        "group": "newsletter_form",
-        "type": "text",
-        "title": "뉴스레터 폼 제목",
-        "default": "뉴스레터"
-      },
-      "newsletter_form_button_text" : {
-        "group": "newsletter_form",
-        "type": "text",
-        "title": "뉴스레터 버튼 텍스트",
-        "default": "무료 뉴스레터 구독"
-      },
-      "brand_background_color": {
-        "group": "layout",
-        "type": "color",
-        "default": "#f5f5f5",
-        "title": "메인 배경색"
-      },
-      "shop_point_background_color": {
-        "group": "shop",
-        "type": "color",
-        "default": "#3c7eff",
-        "title": "숍 포인트 배경색"
-      },
-      "shop_point_color": {
-        "group": "shop",
-        "type": "color",
-        "default": "#000000",
-        "title": "숍 포인트 글자색"
-      },
-      "shop_display_status": {
-        "group": "shop",
-        "type": "select",
-        "options": [
-          "on",
-          "off"
-        ],
-        "default": "on",
-        "title": "숍 상품 노출하기",
-        "description": "사이트에서 숍 목록을 표시하려면 on 으로 활성화 하세요."
       },
       "shop_posts_per_page": {
         "group": "shop",

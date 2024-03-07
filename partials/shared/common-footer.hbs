@@ -8,10 +8,10 @@
           <div class="shared-common-footer__identity">
           {{#if @site.logo }}
             <div class="shared-common-footer__logo">
-              <img class="shared-common-footer__logo--image" src="{{ @site.logo }}" alt="{{ @site.title }}의 로고" />
+              <img class="shared-common-footer__logo--image" src="{{ @site.logo }}" alt="{{ @site.brand_site_title }}의 로고" />
             </div>
           {{else}}
-            <h1 class="shared-common-footer__identity--name">{{ @site.title }}</h1>
+            <h1 class="shared-common-footer__identity--name">{{ @site.brand_site_title }}</h1>
           {{/if}}
           </div>
           <ul class="shared-common-footer__site-info">
@@ -43,7 +43,7 @@
             {{#if @site.twitter}}
             <div class="shared-common-footer__sns--item">
               <a href="{{ twitter_url }}" aria-label="Twitter" target="_blank" rel="noopener">
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.7834 4.05368L17.7953 4.56028C17.7953 9.7334 13.8383 15.6933 6.60133 15.6933C4.38012 15.6933 2.31267 15.0457 0.570877 13.9351C0.878524 13.9708 1.19208 13.9907 1.50972 13.9907C3.35343 13.9907 5.0493 13.3649 6.3956 12.316C4.67377 12.2842 3.22155 11.1518 2.7202 9.59832C2.96187 9.644 3.20559 9.6659 3.46126 9.6659C3.82081 9.6659 4.16835 9.62022 4.49794 9.53082C2.69819 9.16923 1.3419 7.58991 1.3419 5.69469V5.64503C1.87322 5.93904 2.47846 6.11385 3.12365 6.13574C2.06896 5.43447 1.37383 4.23653 1.37383 2.87966C1.37383 2.16251 1.56761 1.49104 1.90515 0.912947C3.84473 3.28098 6.7451 4.83847 10.015 5.00139C9.94707 4.71529 9.91316 4.41533 9.91316 4.10942C9.91316 1.94999 11.6749 0.197754 13.8482 0.197754C14.9788 0.197754 16.0016 0.672524 16.7206 1.4334C17.6155 1.25656 18.4585 0.930788 19.2195 0.483792C18.9259 1.39765 18.3027 2.16447 17.4897 2.64917C18.2827 2.55579 19.0437 2.3432 19.7489 2.03331C19.2215 2.81601 18.5524 3.50539 17.7834 4.05368Z" fill="#0A142F"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"/></svg>
               </a>
             </div>
             {{/if}}

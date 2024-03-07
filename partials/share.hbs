@@ -5,7 +5,7 @@
        aria-label='{{t 'Share on Twitter' }}'
        href="https://twitter.com/share?text={{ encode title }}&amp;url={{ url absolute='true' }}"
        onclick="window.open(this.href, 'twitter-share', 'width=550, height=235'); return false;">
-      <span data-icon='ei-sc-twitter' data-size='s' class='c-share__icon'></span>
+       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"/></svg>
     </a>
   </li>
 
@@ -31,16 +31,6 @@
 
   <li class='c-share__item'>
     <a class='c-share__link'
-       title='{{t 'Share on Pinterest' }}'
-       aria-label='{{t 'Share on Pinterest' }}'
-       href="http://pinterest.com/pin/create/button/?url={{ url absolute='true' }}&media={{ feature_image }}&description={{ encode title }}"
-       onclick="window.open(this.href, 'pinterest-share', 'width=580, height=296'); return false;">
-      <span data-icon='ei-sc-pinterest' data-size='s' class='c-share__icon'></span>
-    </a>
-  </li>
-
-  <li class='c-share__item'>
-    <a class='c-share__link'
        title='{{t 'Share via Email' }}'
        aria-label='{{t 'Share via Email' }}'
        href="mailto:?subject={{ encode title }}&body={{ url absolute='true' }}">
@@ -59,3 +49,43 @@
     </a>
   </li>
 </ul>
+
+<style>
+  [data-icon='close'] {
+  padding-right: 1.25em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  display: inline;
+}
+
+  [data-icon='close']:before {
+  content: ' ';
+  width: 0em;
+  height: 1em;
+  border-bottom: .1em solid #444;
+  border-left: .1em solid #444;
+  position: absolute;
+  left: .5em;
+  top: 0em;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+[data-icon='close']:after {
+  content: ' ';
+  width: 1em;
+  height: 0em;
+  border-right: .1em solid #444;
+  border-top: .1em solid #444;
+  position: absolute;
+  top: .5em;
+  left: 0em;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  
+}
+</style>

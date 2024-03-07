@@ -5,10 +5,10 @@
         <div class='c-logo'>
           {{#if @site.logo}}
             <a href='{{ @site.url }}'>
-              <img class='c-logo__img' src='{{ @site.logo }}' alt='{{ @site.title }}' width='' height=''>
+              <img class='c-logo__img' src='{{ @site.logo }}' alt='{{ @site.brand_site_title }}' width='' height=''>
             </a>
           {{else}}
-            <a class='c-logo__link' href='{{ @site.url }}'>{{ @site.title }}</a>
+            <a class='c-logo__link' href='{{ @site.url }}'>{{ @site.brand_site_title }}</a>
           {{/if}}
         </div>
 

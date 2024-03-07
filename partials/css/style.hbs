@@ -2,15 +2,20 @@
     /* For Bluedot */
     :root {
       /* --body-background: var(--background-primary); */
-      --body-background: {{ @custom.brand_background_color }};
       --content-background: var(--background-primary);
 
       --paywall-background:rgba(0,0,0,0.8);
       --text:var(--color-text);
       --sub-text:var(--color-gray);
-      --accent-color: {{ @site.accent_color }};
-      --shop-accent-color: {{ @custom.shop_point_color }};
-      --shop-accent-background-color: {{ @custom.shop_point_background_color }};
+      {{#if @site.accent_color}}
+  --accent-color: {{ @site.accent_color }};
+  {{/if}}
+
+  {{#if @site.header_background_color}}
+  --body-background: {{ @site.header_background_color }};
+  --color-header-background: {{@site.header_background_color}};
+  --color-home-hero-background: {{@site.header_background_color}};
+  {{/if}}
     }
     .bluedot-signin h3.signin-subtitle {
       color:var(--text);
@@ -70,4 +75,56 @@ body {
     .c-post-card:active .c-post-card__title-link, .c-post-card:focus .c-post-card__title-link, .c-post-card:hover .c-post-card__title-link {
       border-color:#04a6d7;
     }
+
+    {{#if @site.title_align}}
+.post-template .c-post-header__title {
+  {{#match @site.title_align '=' 'left'}}
+  text-align: left;
+  {{else match @site.title_align '=' 'right'}}
+  text-align: right;
+  {{else match @site.title_align '=' 'center'}}
+  text-align: center;
+  {{else match @site.title_align '=' 'side'}}
+  text-align: justify;
+  {{/match}}
+}
+{{/if}}
+
+{{#if @site.main_align}}
+.post-template .c-content {
+  {{#match @site.main_align '=' 'left'}}
+  text-align: left;
+  {{else match @site.main_align '=' 'right'}}
+  text-align: right;
+  {{else match @site.main_align '=' 'center'}}
+  text-align: center;
+  {{else match @site.main_align '=' 'side'}}
+  text-align: justify;
+  {{/match}}
+}
+{{/if}}
+
+{{#if @site.title_font}}
+.post-template .c-post-header__title {
+  {{#match @site.title_font '=' 'noto_sans_kr'}}
+  font-family: "Noto Sans KR", sans-serif;
+  {{else match @site.title_font '=' 'nanum_gothic'}}
+  font-family: "Nanum Gothic", sans-serif;
+  {{/match}}
+}
+{{/if}}
+
+{{#if @site.main_font}}
+.post-template .c-content,
+.post-template .c-content *,
+.post-template .c-content > *,
+.post-template .c-content ul,
+.post-template .c-content li {
+  {{#match @site.main_font '=' 'noto_sans_kr'}}
+  font-family: "Noto Sans KR", sans-serif;
+  {{else match @site.main_font '=' 'nanum_gothic'}}
+  font-family: "Nanum Gothic", sans-serif;
+  {{/match}}
+}
+{{/if}}
     </style>
