@@ -1,0 +1,68 @@
+{{#get 'posts' limit='4' include='authors' filter='tags:[{{post.tags}}]+id:-{{post.id}}' order="published_at desc" as
+|related-posts|}}
+{{#if related-posts}}
+<div class="s-post-related">
+    <div class="s-post-related__name">당신이 놓친 글</div>
+    <div class="s-product-related__list s-post-related__list">
+        {{#foreach related-posts}}
+        <a href="{{ url }}" class="">
+            <article>
+                <div class="s-post-related__image-container">
+                    {{#if feature_image}}
+                    <img alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+                        class="s-post-related__image" src="{{img_url feature_image}}">
+                    {{else}}
+                    <img alt="{{title}}" class="s-post-related__image" src="{{@custom.default_image}}">
+                    {{/if}}
+
+                </div>
+                <div class="content grow flex flex-col">
+                    <div class="s-post-related__title">{{title}}</div>
+                    <div class="s-post-related__info">
+                        {{#primary_author}}
+                        <div class="s-post-related__author">
+                            <div class="s-post-related__author--by">by&nbsp;</div>
+                            <div class="s-post-related__author--name">{{name}}</div>
+                        </div>
+                        {{/primary_author}}
+                        <div class="s-post-related__date">{{date published_at format="YYYY.M.D"}}</div>
+                    </div>
+                </div>
+            </article>
+        </a>
+        {{/foreach}}
+    </div>
+</div>
+<div class="s-post-related-media">
+    <div class="s-post-related-media__name">당신이 놓친 글</div>
+    <div class="s-post-related-media__list">
+        {{#foreach related-posts}}
+        <article class="s-post-related-media__component {{#if @last}}s-post-related-media__component--last{{/if}}">
+            <div class="s-post-related-media__not-image">
+                <div class="s-post-related-media__title">{{title}}</div>
+                <div class="s-post-related-media__info">
+                    {{#primary_author}}
+                    <div class="s-post-related-media__author">
+                        <div class="s-post-related-media__author--by">by&nbsp;</div>
+                        <div class="s-post-related-media__author--name">{{name}}</div>
+                    </div>
+                    {{/primary_author}}
+                    <div class="s-post-related-media__date">{{date published_at format="YYYY.M.D"}}</div>
+                </div>
+            </div>
+            <div class="s-post-related-media__image-container">
+                <a href="{{ url }}" class="">
+                    {{#if feature_image}}
+                    <img alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+                        class="s-post-related-media__image" src="{{img_url feature_image}}">
+                    {{else}}
+                    <img alt="{{title}}" class="s-post-related-media__image" src="{{@custom.default_image}}">
+                    {{/if}}
+                </a>
+            </div>
+        </article>
+        {{/foreach}}
+    </div>
+</div>
+{{/if}}
+{{/get}}

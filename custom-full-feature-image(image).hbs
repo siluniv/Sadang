@@ -1,0 +1,82 @@
+{{!< default}} {{#contentFor 'title' }}{{ meta_title }}{{/contentFor}} {{#post}} {{#if feature_image}} <div
+  class="c-post-image-header-template">
+  <div class="c-post-image-header-template__wrap">
+    <img alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+      class='c-post-image-header-template__img lazyload' style="width: 100%; height: 100%; object-fit: cover;"
+      data-srcset='
+                {{ img_url feature_image size=' ml' }} 320w, {{ img_url feature_image size='lg' }} 636w, {{ img_url
+      feature_image size='xl' }} 1272w, {{ img_url feature_image size='xxl' }} 2640w'
+      data-src='{{ img_url feature_image size=' xxl' }}' />
+  </div>
+  </div>
+  {{/if}}
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--3-4-l'>
+      <article class='c-{{ post_class }}'>
+        {{> post-header }}
+
+        {{!-- Show the tags, share, author, subscribe box, and comments if visitor can access the post, this means that:
+        1. The post is public for anyone
+        2. The post is published for subscribers and the visitor is a subscriber
+        3. The post is for paid members only and the visitor is a paid member --}}
+        {{#if access}}
+        <section class='c-content'>
+          {{ content }}
+        </section>
+
+        {{bluedot_comment_button}}
+
+        {{#if tags}}
+        <section class='c-tags'>
+          {{ tags separator='' }}
+        </section>
+        {{/if}}
+
+        {{> share }}
+
+        {{#primary_author}}
+        {{> card-author }}
+        {{/primary_author}}
+
+        {{!-- If the post is published for members and paid members and the visitor is not one of those, show the
+        upgrade box --}}
+        {{#unless @member}}
+        {{#if access}}
+
+        {{> subscribe-form-n inputLabel='subscribe-email-post'}}
+
+        {{/if}}
+        {{/unless}}
+
+        {{!-- If the post is published for members and paid members and the visitor is not one of those, show the
+        upgrade box --}}
+        {{else}}
+        <!-- from bluedot -->
+        {{bluedot_paywall}}
+        {{/if}}
+      </article>
+    </div>
+  </div>
+
+  {{bluedot_paywall_popup}}
+
+  {{/post}}
+
+  <div class="o-grid">
+  {{#if @site.visible_related_post}}
+    {{> related-posts}}
+  {{/if}}
+  </div>
+  <div class="o-grid">
+    {{#if @site.post_visible_shop_section}}
+  <section class="c-home-shop-section">
+    <div class="c-home-products-carousel">
+      <div class="o-grid">
+        <div class="o-grid__col o-grid__col--full">
+          {{> common/products/carousel-section which="home" nav="true" title=@site.shop_section_title }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{/if}}
+  </div>

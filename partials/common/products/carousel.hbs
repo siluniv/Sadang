@@ -1,4 +1,4 @@
-{{#get "products" filter=filter include="tags" limit=@config.posts_per_page order="published_at desc" as |items|}}
+{{#get "products" filter=filter include="tags" limit=@custom.shop_posts_per_page order="published_at desc" as |items|}}
 {{#if items}}
 <div class="s-products-carousel__container">
   <div class="s-products-carousel__navigation">
